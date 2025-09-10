@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Rajdhani', sans-serif;
-    background: linear-gradient(135deg, #0a0014 0%, #1a0033 25%, #2d0a3d 50%, #4a1458 75%, #6b1e69 100%);
+    background: linear-gradient(135deg, #480018 0%, #4B021B 25%, #4A071D 50%, #98194A 75%, #D77CA8 100%);
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
@@ -23,10 +23,10 @@ body::before {
     width: 100%;
     height: 100%;
     background:
-        radial-gradient(circle at 20% 80%, rgba(255, 0, 128, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(255, 20, 147, 0.1) 0%, transparent 50%),
-        linear-gradient(90deg, transparent 0%, rgba(255, 0, 128, 0.03) 50%, transparent 100%);
+        radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 212, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 20, 147, 0.15) 0%, transparent 50%),
+        linear-gradient(90deg, transparent 0%, rgba(0, 255, 255, 0.05) 50%, transparent 100%);
     z-index: -2;
 }
 
@@ -39,7 +39,7 @@ body::after {
     width: 100%;
     height: 100%;
     background-image:
-        linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(90deg, rgba(75, 2, 27, 0.9) 1px, transparent 1px);
     background-size: 50px 50px;
     z-index: -1;
     animation: gridMove 20s linear infinite;
@@ -56,15 +56,23 @@ body::after {
 }
 
 .cyberpunk-card {
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(20px);
-    border: 2px solid transparent;
-    border-radius: 20px;
-    box-shadow: 0 0 100px rgba(255, 20, 147, 0.2);
+    background: linear-gradient(145deg,
+        rgba(72, 0, 24, 0.95) 0%,
+        rgba(75, 2, 27, 0.9) 30%,
+        rgba(74, 7, 29, 0.9) 60%,
+        rgba(152, 25, 74, 0.95) 100%);
+    border-radius: 15px;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #D77CA8, #98194A, #FF1493, #4B021B) 1;
+    box-shadow:
+        0 0 50px rgba(215, 124, 168, 0.3),
+        0 0 100px rgba(152, 25, 74, 0.2),
+        inset 0 0 50px rgba(255, 20, 147, 0.1);
+    backdrop-filter: blur(10px);
     position: relative;
-    overflow: hidden;
-    max-width: 480px;
     width: 100%;
+    max-width: 480px;
+    overflow: hidden;
 }
 
 .cyberpunk-card::before {
@@ -75,7 +83,7 @@ body::after {
     right: -3px;
     bottom: -3px;
     background: linear-gradient(45deg,
-        #ff0080, #00ffff, #ff1493, #8a2be2, #ff0080);
+        #ff0080, #4B021Bff, #4A071Dff, #8a2be2, #98194Aff);
     border-radius: 22px;
     z-index: -1;
     animation: borderPulse 4s ease-in-out infinite;
@@ -97,7 +105,7 @@ body::after {
     font-size: 4rem;
     font-weight: 900;
     color: #ffffff;
-    text-shadow: 0 0 80px #ff0080;
+    text-shadow: 0 0 80px #4B021Bff;
     position: relative;
     display: inline-block;
     animation: logoGlow 3s ease-in-out infinite alternate;
@@ -108,18 +116,18 @@ body::after {
     position: absolute;
     top: 0;
     left: 0;
-    color: #00ffff;
-    text-shadow: 0 0 40px #00ffff;
+    color: #480018ff;
+    text-shadow: 0 0 40px #4A071Dff;
     animation: glitchEffect 0.3s infinite;
     opacity: 0;
 }
 
 @keyframes logoGlow {
     0% {
-        text-shadow: 0 0 80px #ff0080;
+        text-shadow: 0 0 80px #00FFFF;
     }
     100% {
-        text-shadow: 0 0 120px #ff0080, 0 0 40px #ff1493;
+        text-shadow: 0 0 120px #00FFFF, 0 0 40px #FF1493;
     }
 }
 
@@ -161,13 +169,13 @@ body::after {
 }
 
 .form-label {
-    color: #00ffff !important;
+    color: #4B021Bff !important;
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 8px;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    text-shadow: 0 0 10px rgba(43, 2, 19, 0.95);
 }
 
 fieldset {
@@ -177,21 +185,21 @@ fieldset {
 }
 
 fieldset legend {
-    color: #00ffff !important;
+    color: #4A071Dff !important;
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 8px;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    text-shadow: 0 0 10px rgba(43, 2, 19, 0.95);
     padding: 0;
     float: none;
     width: auto;
 }
 
 .form-control {
-    background: rgba(0, 0, 0, 0.6) !important;
-    border: 2px solid rgba(0, 255, 255, 0.3) !important;
+    background: rgba(72, 0, 24, 0.9) !important;
+    border: 2px solid rgba(152, 25, 74, 0.6) !important;
     border-radius: 12px !important;
     color: #ffffff !important;
     font-family: 'Rajdhani', sans-serif;
@@ -199,13 +207,15 @@ fieldset legend {
     font-weight: 500;
     padding: 12px 16px;
     transition: all 0.3s ease;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 20px rgba(75, 2, 27, 0.5);
 }
 
 .form-control:focus {
-    background: rgba(0, 20, 30, 0.8) !important;
-    border-color: #00ffff !important;
-    box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.1) !important;
+    background: rgba(74, 7, 29, 0.95) !important;
+    border-color: #D77CA8 !important;
+    box-shadow:
+        inset 0 0 20px rgba(215, 124, 168, 0.2),
+        0 0 20px rgba(215, 124, 168, 0.4) !important;
     color: #ffffff !important;
 }
 
@@ -233,8 +243,8 @@ fieldset legend {
 .gender-option .gender-label {
     display: block;
     padding: 14px;
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(0, 255, 255, 0.3);
+    background: rgba(72, 0, 24, 0.9);
+    border: 2px solid rgba(152, 25, 74, 0.6);
     border-radius: 12px;
     text-align: center;
     cursor: pointer;
@@ -260,11 +270,13 @@ fieldset legend {
 }
 
 .gender-option input[type="radio"]:checked + .gender-label {
-    border-color: #00ffff;
-    background: rgba(0, 255, 255, 0.1);
-    color: #00ffff;
-    box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.1);
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    border-color: #D77CA8;
+    background: rgba(215, 124, 168, 0.2);
+    color: #D77CA8;
+    box-shadow:
+        inset 0 0 20px rgba(215, 124, 168, 0.3),
+        0 0 20px rgba(215, 124, 168, 0.5);
+    text-shadow: 0 0 10px rgba(215, 124, 168, 0.8);
 }
 
 .gender-option input[type="radio"]:checked + .gender-label::before {
@@ -272,7 +284,7 @@ fieldset legend {
 }
 
 .btn-cyberpunk {
-    background: linear-gradient(135deg, #ff0080 0%, #ff1493 50%, #ff0080 100%) !important;
+    background: linear-gradient(135deg, #98194A 0%, #D77CA8 50%, #FF1493 100%) !important;
     border: none !important;
     border-radius: 12px !important;
     color: #ffffff !important;
@@ -283,7 +295,9 @@ fieldset legend {
     letter-spacing: 2px;
     padding: 14px 0;
     transition: all 0.3s ease;
-    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
+    box-shadow:
+        inset 0 0 20px rgba(255, 255, 255, 0.1),
+        0 0 30px rgba(255, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -300,8 +314,10 @@ fieldset legend {
 }
 
 .btn-cyberpunk:hover {
-    background: linear-gradient(135deg, #ff1493 0%, #ff0080 50%, #ff1493 100%) !important;
-    box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.2) !important;
+    background: linear-gradient(135deg, #D77CA8 0%, #98194A 50%, #4B021B 100%) !important;
+    box-shadow:
+        inset 0 0 30px rgba(255, 255, 255, 0.2),
+        0 0 50px rgba(215, 124, 168, 0.6) !important;
     transform: translateY(-2px);
     color: #ffffff !important;
 }
@@ -363,11 +379,11 @@ fieldset legend {
 }
 
 .cyberpunk-link {
-    color: #00ffff;
+    color: #D77CA8ff;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
-    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
 }
 
 .cyberpunk-link:hover {
@@ -407,16 +423,22 @@ fieldset legend {
     position: absolute;
     width: 4px;
     height: 4px;
-    background: rgba(0, 255, 255, 0.6);
+    background: rgba(255, 0, 0, 0.3);
     border-radius: 50%;
     animation: float 15s infinite linear;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 }
 
 .particle:nth-child(odd) {
-    background: rgba(255, 0, 128, 0.6);
-    box-shadow: 0 0 10px rgba(255, 0, 128, 0.8);
+    background: rgba(255, 212, 0, 0.7);
+    box-shadow: 0 0 10px rgba(255, 212, 0, 0.9);
     animation-duration: 12s;
+}
+
+.particle:nth-child(3n) {
+    background: rgba(255, 20, 147, 0.6);
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.8);
+    animation-duration: 18s;
 }
 
 @keyframes float {
