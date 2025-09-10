@@ -54,9 +54,12 @@
                                id="roblox_username"
                                name="roblox_username"
                                class="form-control"
-                               placeholder="Enter your Roblox username"
+                               placeholder="Enter your exact Roblox username"
                                value="{{ old('roblox_username') }}"
                                required>
+                        <small style="color: #888; font-size: 0.85rem;">
+                            We'll verify this username exists on Roblox and fetch your profile data.
+                        </small>
                         @error('roblox_username')
                             <div class="field-error">{{ $message }}</div>
                         @enderror
