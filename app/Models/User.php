@@ -22,6 +22,14 @@ class User extends Authenticatable
         'email',
         'password',
         'gender',
+        'roblox_id',
+        'roblox_username',
+        'roblox_display_name',
+        'roblox_description',
+        'roblox_avatar_url',
+        'roblox_created',
+        'roblox_verified_badge',
+        'roblox_data_updated',
     ];
 
     /**
@@ -44,6 +52,25 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'roblox_created' => 'datetime',
+            'roblox_data_updated' => 'datetime',
+            'roblox_verified_badge' => 'boolean',
         ];
+    }
+
+    /**
+     * Get the user's Roblox avatar URL or a default if not available
+     */
+    public function getRobloxAvatarAttribute(): ?string
+    {
+        return $this->roblox_avatar_url;
+    }
+
+    /**
+     * Get the display name for the user (Roblox display name or username)
+     */
+    public function getDisplayNameAttribute(): string
+    {
+        return $this->roblox_display_name ?? $this->roblox_username ?? $this->name;
     }
 }
