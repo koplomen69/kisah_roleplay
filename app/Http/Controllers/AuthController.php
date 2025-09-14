@@ -41,7 +41,9 @@ class AuthController extends Controller
         // Try to authenticate using the roblox_username field
         if (Auth::attempt(['roblox_username' => $credentials['roblox_username'], 'password' => $credentials['password']])) {
             $request->session()->regenerate();
-            return redirect()->intended('/');
+
+            // Add success message and redirect to profile
+            return redirect()->route('profile')->with('success', 'Welcome back! You have successfully logged in.');
         }
 
         return back()->withErrors([
@@ -93,7 +95,8 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect('/');
+        // Add success message and redirect to profile
+        return redirect()->route('profile')->with('success', 'Account created successfully! Welcome to Kisah Roleplay.');
     }
 
     public function logout(Request $request)

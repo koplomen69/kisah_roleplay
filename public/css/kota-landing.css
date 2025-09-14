@@ -1,14 +1,14 @@
 /* Kota Roleplay - Cyberpunk Style Inspired CSS */
 
 * {
-    margin: 0;
-    padding: 0;
+    margin: 1;
+    padding: 1;
     box-sizing: border-box;
 }
 
 body {
     font-family: 'Rajdhani', sans-serif;
-    background: linear-gradient(135deg, #1A0011 0%, #330022 25%, #660033 50%, #800040 75%, #990044 100%);
+    background: linear-gradient(135deg, #480018 0%, #4B021B 25%, #4A071D 50%, #98194A 75%, #D77CA8 100%);
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
@@ -17,7 +17,7 @@ body {
 /* Dark Cyberpunk City Background */
 body::before {
     content: '';
-    position: fixed;
+    position: flex;
     top: 0;
     left: 0;
     width: 100%;
@@ -65,7 +65,7 @@ body::after {
     backdrop-filter: blur(25px);
     border: 3px solid transparent;
     border-radius: 25px;
-    box-shadow: 
+    box-shadow:
         0 0 200px rgba(255, 0, 128, 0.4),
         0 0 100px rgba(0, 255, 255, 0.2),
         inset 0 0 50px rgba(255, 0, 128, 0.08);
@@ -92,19 +92,19 @@ body::after {
 }
 
 @keyframes kotaBorderGlow {
-    0%, 100% { 
+    0%, 100% {
         background-position: 0% 50%;
         filter: brightness(1) saturate(1.2);
     }
-    25% { 
+    25% {
         background-position: 100% 50%;
         filter: brightness(1.3) saturate(1.5);
     }
-    50% { 
+    50% {
         background-position: 50% 100%;
         filter: brightness(1.1) saturate(1.3);
     }
-    75% { 
+    75% {
         background-position: 50% 0%;
         filter: brightness(1.4) saturate(1.6);
     }
@@ -122,7 +122,7 @@ body::after {
     font-size: 5rem;
     font-weight: 900;
     color: #FFFFFF;
-    text-shadow: 
+    text-shadow:
         0 0 120px #FF0080,
         0 0 80px #00FFFF,
         0 0 40px #FF1493,
@@ -138,7 +138,7 @@ body::after {
     top: 0;
     left: 0;
     color: #FF0080;
-    text-shadow: 
+    text-shadow:
         0 0 100px #FF0080,
         0 0 60px #00FFFF,
         0 0 30px #FF1493;
@@ -147,16 +147,16 @@ body::after {
 }
 
 @keyframes kotaLogoGlow {
-    0%, 100% { 
-        text-shadow: 
+    0%, 100% {
+        text-shadow:
             0 0 120px #FF0080,
             0 0 80px #00FFFF,
             0 0 40px #FF1493,
             0 0 20px #FFFFFF;
         transform: scale(1);
     }
-    50% { 
-        text-shadow: 
+    50% {
+        text-shadow:
             0 0 180px #FF0080,
             0 0 120px #00FFFF,
             0 0 60px #FF1493,
@@ -168,9 +168,9 @@ body::after {
 
 @keyframes logoGlitch {
     0%, 95%, 100% { opacity: 0; }
-    96%, 99% { 
-        opacity: 0.9; 
-        transform: translateX(3px) scale(1.01); 
+    96%, 99% {
+        opacity: 0.9;
+        transform: translateX(3px) scale(1.01);
     }
 }
 
@@ -181,20 +181,20 @@ body::after {
     font-weight: 700;
     letter-spacing: 4px;
     margin-top: 15px;
-    text-shadow: 
+    text-shadow:
         0 0 30px #00FFFF,
         0 0 15px #FF0080;
     animation: textPulse 3s ease-in-out infinite;
 }
 
 @keyframes textPulse {
-    0%, 100% { 
-        text-shadow: 
+    0%, 100% {
+        text-shadow:
             0 0 30px #00FFFF,
             0 0 15px #FFFFFF;
     }
-    50% { 
-        text-shadow: 
+    50% {
+        text-shadow:
             0 0 50px #00FFFF,
             0 0 25px #FFFFFF,
             0 0 10px #FF0080;
@@ -213,7 +213,7 @@ body::after {
     font-weight: 700;
     text-align: center;
     margin-bottom: 15px;
-    text-shadow: 
+    text-shadow:
         0 0 40px rgba(0, 255, 255, 0.6),
         0 0 20px rgba(255, 0, 128, 0.4),
         0 0 10px rgba(255, 255, 255, 0.3);
@@ -221,14 +221,14 @@ body::after {
 }
 
 @keyframes titleGlow {
-    0%, 100% { 
-        text-shadow: 
+    0%, 100% {
+        text-shadow:
             0 0 40px rgba(0, 255, 255, 0.6),
             0 0 20px rgba(255, 0, 128, 0.4),
             0 0 10px rgba(255, 255, 255, 0.3);
     }
-    50% { 
-        text-shadow: 
+    50% {
+        text-shadow:
             0 0 60px rgba(0, 255, 255, 0.8),
             0 0 30px rgba(255, 0, 128, 0.6),
             0 0 15px rgba(255, 255, 255, 0.5);
@@ -241,20 +241,20 @@ body::after {
     margin-bottom: 40px;
     font-size: 1.1rem;
     font-weight: 500;
-    text-shadow: 
+    text-shadow:
         0 0 20px rgba(0, 255, 255, 0.4),
         0 0 10px rgba(255, 0, 128, 0.3);
     animation: subtitleGlow 3s ease-in-out infinite alternate;
 }
 
 @keyframes subtitleGlow {
-    0% { 
-        text-shadow: 
+    0% {
+        text-shadow:
             0 0 20px rgba(0, 255, 255, 0.4),
             0 0 10px rgba(255, 0, 128, 0.3);
     }
-    100% { 
-        text-shadow: 
+    100% {
+        text-shadow:
             0 0 30px rgba(0, 255, 255, 0.6),
             0 0 15px rgba(255, 0, 128, 0.4);
     }
@@ -273,7 +273,7 @@ body::after {
     letter-spacing: 3px;
     padding: 16px 0;
     transition: all 0.3s ease;
-    box-shadow: 
+    box-shadow:
         0 0 40px rgba(255, 0, 128, 0.6),
         0 0 20px rgba(0, 255, 255, 0.3),
         inset 0 0 20px rgba(255, 255, 255, 0.1);
@@ -294,7 +294,7 @@ body::after {
 
 .btn-cyberpunk:hover {
     background: linear-gradient(135deg, #00FFFF 0%, #FF0080 50%, #DC143C 100%) !important;
-    box-shadow: 
+    box-shadow:
         0 0 60px rgba(255, 0, 128, 0.9),
         0 0 120px rgba(0, 255, 255, 0.5),
         inset 0 0 30px rgba(255, 255, 255, 0.2) !important;
@@ -325,14 +325,14 @@ body::after {
     background: rgba(0, 255, 255, 0.8);
     border-radius: 50%;
     animation: kotaFloat 20s infinite linear;
-    box-shadow: 
+    box-shadow:
         0 0 20px rgba(0, 255, 255, 1),
         0 0 40px rgba(0, 255, 255, 0.5);
 }
 
 .particle:nth-child(odd) {
     background: rgba(255, 0, 128, 0.8);
-    box-shadow: 
+    box-shadow:
         0 0 20px rgba(255, 0, 128, 1),
         0 0 40px rgba(255, 0, 128, 0.5);
     animation-duration: 16s;
@@ -340,7 +340,7 @@ body::after {
 
 .particle:nth-child(3n) {
     background: rgba(138, 43, 226, 0.8);
-    box-shadow: 
+    box-shadow:
         0 0 20px rgba(138, 43, 226, 1),
         0 0 40px rgba(138, 43, 226, 0.5);
     animation-duration: 24s;
@@ -593,10 +593,10 @@ fieldset legend {
 }
 
 @keyframes navLogoGlow {
-    0%, 100% { 
+    0%, 100% {
         filter: drop-shadow(0 0 15px #FF0080) drop-shadow(0 0 30px #00FFFF);
     }
-    50% { 
+    50% {
         filter: drop-shadow(0 0 25px #FF0080) drop-shadow(0 0 45px #00FFFF) drop-shadow(0 0 10px #FFFFFF);
     }
 }
@@ -606,7 +606,7 @@ fieldset legend {
     font-weight: 700;
     font-size: 1.3rem;
     color: #FFFFFF;
-    text-shadow: 
+    text-shadow:
         0 0 20px #FF0080,
         0 0 10px #00FFFF,
         0 0 5px #FFFFFF;
@@ -684,14 +684,14 @@ fieldset legend {
     color: #FFFFFF;
     line-height: 1.1;
     margin-bottom: 25px;
-    text-shadow: 
+    text-shadow:
         0 0 30px rgba(255, 255, 255, 0.3),
         0 0 60px rgba(0, 255, 255, 0.2);
 }
 
 .title-highlight {
     color: #FF0080;
-    text-shadow: 
+    text-shadow:
         0 0 40px #FF0080,
         0 0 80px #FF0080,
         0 0 20px #FFFFFF;
@@ -700,13 +700,13 @@ fieldset legend {
 
 @keyframes titlePulse {
     0%, 100% {
-        text-shadow: 
+        text-shadow:
             0 0 40px #FF0080,
             0 0 80px #FF0080,
             0 0 20px #FFFFFF;
     }
     50% {
-        text-shadow: 
+        text-shadow:
             0 0 60px #FF0080,
             0 0 120px #FF0080,
             0 0 30px #FFFFFF,
@@ -832,7 +832,7 @@ fieldset legend {
 .main-logo-img {
     width: 300px;
     height: 300px;
-    filter: 
+    filter:
         drop-shadow(0 0 50px #FF0080)
         drop-shadow(0 0 100px #00FFFF)
         drop-shadow(0 0 150px rgba(255, 0, 128, 0.3))
@@ -843,7 +843,7 @@ fieldset legend {
 
 @keyframes mainLogoGlow {
     0%, 100% {
-        filter: 
+        filter:
             drop-shadow(0 0 50px #FF0080)
             drop-shadow(0 0 100px #00FFFF)
             drop-shadow(0 0 150px rgba(255, 0, 128, 0.3))
@@ -851,7 +851,7 @@ fieldset legend {
         transform: scale(1);
     }
     50% {
-        filter: 
+        filter:
             drop-shadow(0 0 70px #FF0080)
             drop-shadow(0 0 140px #00FFFF)
             drop-shadow(0 0 210px rgba(255, 0, 128, 0.4))
@@ -863,7 +863,7 @@ fieldset legend {
 
 .main-logo-img:hover {
     transform: scale(1.05);
-    filter: 
+    filter:
         drop-shadow(0 0 80px #FF0080)
         drop-shadow(0 0 160px #00FFFF)
         drop-shadow(0 0 240px rgba(255, 0, 128, 0.5))
@@ -884,7 +884,7 @@ fieldset legend {
     font-size: 3rem;
     font-weight: 900;
     color: #FFFFFF;
-    text-shadow: 
+    text-shadow:
         0 0 60px #FF0080,
         0 0 120px #00FFFF,
         0 0 30px #FFFFFF;
@@ -894,14 +894,14 @@ fieldset legend {
 
 @keyframes logoSubGlow {
     0%, 100% {
-        text-shadow: 
+        text-shadow:
             0 0 60px #FF0080,
             0 0 120px #00FFFF,
             0 0 30px #FFFFFF;
         transform: scale(1);
     }
     50% {
-        text-shadow: 
+        text-shadow:
             0 0 80px #FF0080,
             0 0 160px #00FFFF,
             0 0 40px #FFFFFF,
@@ -916,20 +916,20 @@ fieldset legend {
         margin: 15px;
         max-width: none;
     }
-    
+
     .form-section {
         padding: 0 30px 40px;
     }
-    
+
     .logo-k {
         font-size: 3.5rem;
     }
-    
+
     .logo-text {
         font-size: 1.1rem;
         letter-spacing: 3px;
     }
-    
+
     .form-title {
         font-size: 1.8rem;
     }
@@ -940,15 +940,15 @@ fieldset legend {
         border-radius: 20px;
         margin: 10px;
     }
-    
+
     .logo-k {
         font-size: 3rem;
     }
-    
+
     .form-title {
         font-size: 1.5rem;
     }
-    
+
     .form-section {
         padding: 0 25px 35px;
     }
