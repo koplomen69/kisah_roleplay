@@ -1,0 +1,955 @@
+/* Kota Roleplay - Cyberpunk Style Inspired CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background: linear-gradient(135deg, #1A0011 0%, #330022 25%, #660033 50%, #800040 75%, #990044 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Dark Cyberpunk City Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(255, 0, 128, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 20, 147, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 60% 60%, rgba(220, 20, 60, 0.1) 0%, transparent 50%),
+        linear-gradient(180deg, transparent 0%, rgba(255, 0, 128, 0.08) 50%, transparent 100%);
+    z-index: -2;
+}
+
+/* Neon Grid Effect */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(90deg, rgba(255, 0, 128, 0.15) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255, 0, 128, 0.15) 1px, transparent 1px),
+        linear-gradient(45deg, rgba(0, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 80px 80px, 80px 80px, 40px 40px;
+    z-index: -1;
+    animation: neonGrid 20s linear infinite;
+}
+
+@keyframes neonGrid {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(80px, 80px); }
+}
+
+.auth-container {
+    min-height: 100vh;
+    position: relative;
+    backdrop-filter: blur(1px);
+}
+
+/* Main Card - Kota Roleplay Style */
+.cyberpunk-card {
+    background: rgba(20, 5, 15, 0.95);
+    backdrop-filter: blur(25px);
+    border: 3px solid transparent;
+    border-radius: 25px;
+    box-shadow: 
+        0 0 200px rgba(255, 0, 128, 0.4),
+        0 0 100px rgba(0, 255, 255, 0.2),
+        inset 0 0 50px rgba(255, 0, 128, 0.08);
+    position: relative;
+    overflow: hidden;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Animated Border like Kota Roleplay */
+.cyberpunk-card::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg,
+        #FF0080, #00FFFF, #FF1493, #DC143C, #FF0080, #00FFFF);
+    border-radius: 28px;
+    z-index: -1;
+    animation: kotaBorderGlow 4s ease-in-out infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes kotaBorderGlow {
+    0%, 100% { 
+        background-position: 0% 50%;
+        filter: brightness(1) saturate(1.2);
+    }
+    25% { 
+        background-position: 100% 50%;
+        filter: brightness(1.3) saturate(1.5);
+    }
+    50% { 
+        background-position: 50% 100%;
+        filter: brightness(1.1) saturate(1.3);
+    }
+    75% { 
+        background-position: 50% 0%;
+        filter: brightness(1.4) saturate(1.6);
+    }
+}
+
+/* Logo Section - "K" Style */
+.logo-section {
+    text-align: center;
+    padding: 40px 0 30px;
+    position: relative;
+}
+
+.logo-k {
+    font-family: 'Orbitron', monospace;
+    font-size: 5rem;
+    font-weight: 900;
+    color: #FFFFFF;
+    text-shadow: 
+        0 0 120px #FF0080,
+        0 0 80px #00FFFF,
+        0 0 40px #FF1493,
+        0 0 20px #FFFFFF;
+    position: relative;
+    display: inline-block;
+    animation: kotaLogoGlow 4s ease-in-out infinite;
+}
+
+.logo-k::before {
+    content: 'K';
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #FF0080;
+    text-shadow: 
+        0 0 100px #FF0080,
+        0 0 60px #00FFFF,
+        0 0 30px #FF1493;
+    animation: logoGlitch 0.15s infinite;
+    opacity: 0;
+}
+
+@keyframes kotaLogoGlow {
+    0%, 100% { 
+        text-shadow: 
+            0 0 120px #FF0080,
+            0 0 80px #00FFFF,
+            0 0 40px #FF1493,
+            0 0 20px #FFFFFF;
+        transform: scale(1);
+    }
+    50% { 
+        text-shadow: 
+            0 0 180px #FF0080,
+            0 0 120px #00FFFF,
+            0 0 60px #FF1493,
+            0 0 30px #DC143C,
+            0 0 15px #FFFFFF;
+        transform: scale(1.03);
+    }
+}
+
+@keyframes logoGlitch {
+    0%, 95%, 100% { opacity: 0; }
+    96%, 99% { 
+        opacity: 0.9; 
+        transform: translateX(3px) scale(1.01); 
+    }
+}
+
+.logo-text {
+    font-family: 'Orbitron', monospace;
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-top: 15px;
+    text-shadow: 
+        0 0 30px #00FFFF,
+        0 0 15px #FF0080;
+    animation: textPulse 3s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+    0%, 100% { 
+        text-shadow: 
+            0 0 30px #00FFFF,
+            0 0 15px #FFFFFF;
+    }
+    50% { 
+        text-shadow: 
+            0 0 50px #00FFFF,
+            0 0 25px #FFFFFF,
+            0 0 10px #FF0080;
+    }
+}
+
+/* Form Section */
+.form-section {
+    padding: 0 50px 50px;
+}
+
+.form-title {
+    color: #FFFFFF !important;
+    font-family: 'Orbitron', monospace;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 
+        0 0 40px rgba(0, 255, 255, 0.6),
+        0 0 20px rgba(255, 0, 128, 0.4),
+        0 0 10px rgba(255, 255, 255, 0.3);
+    animation: titleGlow 4s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+    0%, 100% { 
+        text-shadow: 
+            0 0 40px rgba(0, 255, 255, 0.6),
+            0 0 20px rgba(255, 0, 128, 0.4),
+            0 0 10px rgba(255, 255, 255, 0.3);
+    }
+    50% { 
+        text-shadow: 
+            0 0 60px rgba(0, 255, 255, 0.8),
+            0 0 30px rgba(255, 0, 128, 0.6),
+            0 0 15px rgba(255, 255, 255, 0.5);
+    }
+}
+
+.form-subtitle {
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.4),
+        0 0 10px rgba(255, 0, 128, 0.3);
+    animation: subtitleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes subtitleGlow {
+    0% { 
+        text-shadow: 
+            0 0 20px rgba(0, 255, 255, 0.4),
+            0 0 10px rgba(255, 0, 128, 0.3);
+    }
+    100% { 
+        text-shadow: 
+            0 0 30px rgba(0, 255, 255, 0.6),
+            0 0 15px rgba(255, 0, 128, 0.4);
+    }
+}
+
+/* Cyberpunk Buttons */
+.btn-cyberpunk {
+    background: linear-gradient(135deg, #FF0080 0%, #00FFFF 50%, #FF1493 100%) !important;
+    border: 2px solid #FF0080 !important;
+    border-radius: 15px !important;
+    color: #FFFFFF !important;
+    font-family: 'Orbitron', monospace;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 16px 0;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 0 40px rgba(255, 0, 128, 0.6),
+        0 0 20px rgba(0, 255, 255, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-cyberpunk::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-cyberpunk:hover {
+    background: linear-gradient(135deg, #00FFFF 0%, #FF0080 50%, #DC143C 100%) !important;
+    box-shadow: 
+        0 0 60px rgba(255, 0, 128, 0.9),
+        0 0 120px rgba(0, 255, 255, 0.5),
+        inset 0 0 30px rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-3px) scale(1.02);
+    color: #FFFFFF !important;
+    border-color: #00FFFF !important;
+}
+
+.btn-cyberpunk:hover::before {
+    left: 100%;
+}
+
+/* Floating Particles - Enhanced for Kota Style */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(0, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: kotaFloat 20s infinite linear;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 1),
+        0 0 40px rgba(0, 255, 255, 0.5);
+}
+
+.particle:nth-child(odd) {
+    background: rgba(255, 0, 128, 0.8);
+    box-shadow: 
+        0 0 20px rgba(255, 0, 128, 1),
+        0 0 40px rgba(255, 0, 128, 0.5);
+    animation-duration: 16s;
+}
+
+.particle:nth-child(3n) {
+    background: rgba(138, 43, 226, 0.8);
+    box-shadow: 
+        0 0 20px rgba(138, 43, 226, 1),
+        0 0 40px rgba(138, 43, 226, 0.5);
+    animation-duration: 24s;
+}
+
+@keyframes kotaFloat {
+    0% {
+        transform: translateY(100vh) scale(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Form Controls */
+.form-label {
+    color: #00FFFF !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.form-control {
+    background: rgba(0, 0, 0, 0.6) !important;
+    border: 2px solid rgba(255, 0, 128, 0.3) !important;
+    border-radius: 12px !important;
+    color: #ffffff !important;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.form-control:focus {
+    background: rgba(0, 20, 30, 0.8) !important;
+    border-color: #FF0080 !important;
+    box-shadow: inset 0 0 20px rgba(255, 0, 128, 0.1), 0 0 30px rgba(255, 0, 128, 0.3) !important;
+    color: #ffffff !important;
+}
+
+.form-control::placeholder {
+    color: #888 !important;
+    font-weight: 400;
+}
+
+/* Gender Radio Buttons */
+.gender-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.gender-option {
+    flex: 1;
+    position: relative;
+}
+
+.gender-option input[type="radio"] {
+    display: none;
+}
+
+.gender-option .gender-label {
+    display: block;
+    padding: 14px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 0, 128, 0.3);
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #888;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gender-option .gender-label::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 128, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.gender-option input[type="radio"]:checked + .gender-label {
+    border-color: #FF0080;
+    background: rgba(255, 0, 128, 0.1);
+    color: #FF0080;
+    box-shadow: inset 0 0 20px rgba(255, 0, 128, 0.1), 0 0 30px rgba(255, 0, 128, 0.3);
+    text-shadow: 0 0 10px rgba(255, 0, 128, 0.5);
+}
+
+.gender-option input[type="radio"]:checked + .gender-label::before {
+    left: 100%;
+}
+
+/* Fieldset styling */
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+fieldset legend {
+    color: #00FFFF !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    padding: 0;
+    float: none;
+    width: auto;
+}
+
+/* Error Alert */
+.error-alert {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    border-radius: 8px;
+    color: #ff6b6b;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.field-error {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    text-shadow: 0 0 5px rgba(255, 107, 107, 0.3);
+}
+
+/* Divider */
+.divider {
+    position: relative;
+    text-align: center;
+    margin: 25px 0;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 128, 0.3), transparent);
+}
+
+.divider span {
+    background: rgba(20, 5, 15, 0.9);
+    color: #888;
+    padding: 0 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Discord Button */
+.btn-discord {
+    background: linear-gradient(135deg, #5865F2 0%, #4752C4 100%) !important;
+    border: 2px solid rgba(88, 101, 242, 0.5) !important;
+    border-radius: 12px !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(88, 101, 242, 0.3);
+}
+
+.btn-discord:hover {
+    background: linear-gradient(135deg, #4752C4 0%, #5865F2 100%) !important;
+    box-shadow: 0 0 25px rgba(88, 101, 242, 0.5);
+    transform: translateY(-2px);
+    color: #ffffff !important;
+}
+
+/* Cyberpunk Links */
+.cyberpunk-link {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+.cyberpunk-link:hover {
+    color: #ff0080;
+    text-shadow: 0 0 10px rgba(255, 0, 128, 0.5);
+}
+
+/* Auth Links */
+.auth-links span {
+    color: #00FFFF;
+    font-size: 1rem;
+    font-weight: 500;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    animation: linkGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes linkGlow {
+    0% { text-shadow: 0 0 15px rgba(0, 255, 255, 0.6); }
+    100% { text-shadow: 0 0 25px rgba(0, 255, 255, 0.9); }
+}
+
+/* Navigation Bar Styles */
+.cyberpunk-navbar {
+    background: rgba(20, 5, 15, 0.95) !important;
+    backdrop-filter: blur(15px);
+    border-bottom: 2px solid rgba(255, 0, 128, 0.3);
+    padding: 15px 0;
+    box-shadow: 0 5px 30px rgba(255, 0, 128, 0.2);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo-img {
+    width: 60px;
+    height: 60px;
+    filter: drop-shadow(0 0 20px #FF0080) drop-shadow(0 0 40px #00FFFF);
+    animation: navLogoGlow 3s ease-in-out infinite;
+}
+
+@keyframes navLogoGlow {
+    0%, 100% { 
+        filter: drop-shadow(0 0 15px #FF0080) drop-shadow(0 0 30px #00FFFF);
+    }
+    50% { 
+        filter: drop-shadow(0 0 25px #FF0080) drop-shadow(0 0 45px #00FFFF) drop-shadow(0 0 10px #FFFFFF);
+    }
+}
+
+.nav-logo-text {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #FFFFFF;
+    text-shadow: 
+        0 0 20px #FF0080,
+        0 0 10px #00FFFF,
+        0 0 5px #FFFFFF;
+    letter-spacing: 2px;
+}
+
+.navbar-nav .nav-link {
+    color: #FFFFFF !important;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FF0080 !important;
+    text-shadow: 0 0 10px rgba(255, 0, 128, 0.6);
+}
+
+.btn-profile {
+    background: linear-gradient(135deg, #FF0080 0%, #00FFFF 100%) !important;
+    border: 2px solid #FF0080 !important;
+    border-radius: 20px !important;
+    padding: 8px 20px !important;
+    color: #FFFFFF !important;
+    font-weight: 700;
+    text-shadow: none !important;
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-profile:hover {
+    background: linear-gradient(135deg, #00FFFF 0%, #FF0080 100%) !important;
+    box-shadow: 0 0 25px rgba(255, 0, 128, 0.7);
+    transform: scale(1.05);
+    color: #FFFFFF !important;
+}
+
+/* Landing Page Main Content */
+.landing-main {
+    padding-top: 100px;
+    min-height: 100vh;
+    position: relative;
+}
+
+.landing-content {
+    padding: 60px 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.landing-badge {
+    background: linear-gradient(135deg, rgba(255, 0, 128, 0.2), rgba(0, 255, 255, 0.1));
+    border: 1px solid rgba(255, 0, 128, 0.4);
+    border-radius: 25px;
+    color: #FF0080;
+    padding: 8px 20px;
+    font-family: 'Orbitron', monospace;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(255, 0, 128, 0.5);
+    box-shadow: 0 0 20px rgba(255, 0, 128, 0.2);
+}
+
+.landing-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    text-shadow: 
+        0 0 30px rgba(255, 255, 255, 0.3),
+        0 0 60px rgba(0, 255, 255, 0.2);
+}
+
+.title-highlight {
+    color: #FF0080;
+    text-shadow: 
+        0 0 40px #FF0080,
+        0 0 80px #FF0080,
+        0 0 20px #FFFFFF;
+    animation: titlePulse 4s ease-in-out infinite;
+}
+
+@keyframes titlePulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 40px #FF0080,
+            0 0 80px #FF0080,
+            0 0 20px #FFFFFF;
+    }
+    50% {
+        text-shadow: 
+            0 0 60px #FF0080,
+            0 0 120px #FF0080,
+            0 0 30px #FFFFFF,
+            0 0 15px #00FFFF;
+    }
+}
+
+.landing-description {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.landing-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-discord-main {
+    background: linear-gradient(135deg, #5865F2 0%, #4752C4 100%) !important;
+    border: 2px solid #5865F2 !important;
+    border-radius: 15px !important;
+    color: #FFFFFF !important;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 15px 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(88, 101, 242, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-discord-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-discord-main:hover {
+    background: linear-gradient(135deg, #4752C4 0%, #5865F2 100%) !important;
+    box-shadow: 0 0 50px rgba(88, 101, 242, 0.7);
+    transform: translateY(-3px) scale(1.05);
+    color: #FFFFFF !important;
+}
+
+.btn-discord-main:hover::before {
+    left: 100%;
+}
+
+.btn-play {
+    background: linear-gradient(135deg, #FF0080 0%, #00FFFF 100%) !important;
+    border: 2px solid #FF0080 !important;
+    border-radius: 15px !important;
+    color: #FFFFFF !important;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 15px 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(255, 0, 128, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-play::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-play:hover {
+    background: linear-gradient(135deg, #00FFFF 0%, #FF0080 100%) !important;
+    box-shadow: 0 0 50px rgba(255, 0, 128, 0.7);
+    transform: translateY(-3px) scale(1.05);
+    color: #FFFFFF !important;
+}
+
+.btn-play:hover::before {
+    left: 100%;
+}
+
+/* Right Logo Section */
+.landing-logo-section {
+    padding: 60px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.landing-logo {
+    position: relative;
+    z-index: 2;
+}
+
+.logo-image-container {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-logo-img {
+    width: 300px;
+    height: 300px;
+    filter: 
+        drop-shadow(0 0 50px #FF0080)
+        drop-shadow(0 0 100px #00FFFF)
+        drop-shadow(0 0 150px rgba(255, 0, 128, 0.3))
+        drop-shadow(0 0 200px rgba(0, 255, 255, 0.2));
+    animation: mainLogoGlow 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes mainLogoGlow {
+    0%, 100% {
+        filter: 
+            drop-shadow(0 0 50px #FF0080)
+            drop-shadow(0 0 100px #00FFFF)
+            drop-shadow(0 0 150px rgba(255, 0, 128, 0.3))
+            drop-shadow(0 0 200px rgba(0, 255, 255, 0.2));
+        transform: scale(1);
+    }
+    50% {
+        filter: 
+            drop-shadow(0 0 70px #FF0080)
+            drop-shadow(0 0 140px #00FFFF)
+            drop-shadow(0 0 210px rgba(255, 0, 128, 0.4))
+            drop-shadow(0 0 280px rgba(0, 255, 255, 0.3))
+            drop-shadow(0 0 50px #FFFFFF);
+        transform: scale(1.02);
+    }
+}
+
+.main-logo-img:hover {
+    transform: scale(1.05);
+    filter: 
+        drop-shadow(0 0 80px #FF0080)
+        drop-shadow(0 0 160px #00FFFF)
+        drop-shadow(0 0 240px rgba(255, 0, 128, 0.5))
+        drop-shadow(0 0 320px rgba(0, 255, 255, 0.4))
+        drop-shadow(0 0 60px #FFFFFF);
+}
+
+.logo-text-container {
+    text-align: center;
+}
+
+.logo-main {
+    display: none; /* Hide the old KOTA text since we're using the image */
+}
+
+.logo-sub {
+    font-family: 'Orbitron', monospace;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #FFFFFF;
+    text-shadow: 
+        0 0 60px #FF0080,
+        0 0 120px #00FFFF,
+        0 0 30px #FFFFFF;
+    letter-spacing: 8px;
+    animation: logoSubGlow 4s ease-in-out infinite;
+}
+
+@keyframes logoSubGlow {
+    0%, 100% {
+        text-shadow: 
+            0 0 60px #FF0080,
+            0 0 120px #00FFFF,
+            0 0 30px #FFFFFF;
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 
+            0 0 80px #FF0080,
+            0 0 160px #00FFFF,
+            0 0 40px #FFFFFF,
+            0 0 20px #DC143C;
+        transform: scale(1.02);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cyberpunk-card {
+        margin: 15px;
+        max-width: none;
+    }
+    
+    .form-section {
+        padding: 0 30px 40px;
+    }
+    
+    .logo-k {
+        font-size: 3.5rem;
+    }
+    
+    .logo-text {
+        font-size: 1.1rem;
+        letter-spacing: 3px;
+    }
+    
+    .form-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cyberpunk-card {
+        border-radius: 20px;
+        margin: 10px;
+    }
+    
+    .logo-k {
+        font-size: 3rem;
+    }
+    
+    .form-title {
+        font-size: 1.5rem;
+    }
+    
+    .form-section {
+        padding: 0 25px 35px;
+    }
+}

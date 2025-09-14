@@ -8,8 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Cyberpunk Auth Styles -->
-    <link href="{{ asset('css/cyberpunk-auth.css') }}" rel="stylesheet">
+    <!-- Kota Roleplay Cyberpunk Styles -->
+    <link href="{{ asset('css/kota-roleplay.css') }}" rel="stylesheet">
 </head>
 <body>
     <!-- Floating particles -->
@@ -36,30 +36,7 @@
             <!-- Welcome Content -->
             <div class="form-section">
                 <h2 class="form-title">Welcome to the Future</h2>
-                <p class="form-subtitle">Enter the cyberpunk roleplay universe where your stories come to life.</p>
-
-                <div class="mb-4">
-                    <div class="card" style="background: rgba(0, 0, 0, 0.6); border: 2px solid rgba(0, 255, 255, 0.3); border-radius: 12px;">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: #00ffff; font-family: 'Orbitron', monospace;">System Features</h5>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <ul style="color: #ffffff; list-style: none; padding: 0;">
-                                        <li style="margin-bottom: 8px;"><span style="color: #00ffff;">▶</span> Immersive Roleplay</li>
-                                        <li style="margin-bottom: 8px;"><span style="color: #00ffff;">▶</span> Character Creation</li>
-                                        <li style="margin-bottom: 8px;"><span style="color: #00ffff;">▶</span> Interactive Stories</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6">
-                                    <ul style="color: #ffffff; list-style: none; padding: 0;">
-                                        <li style="margin-bottom: 8px;"><span style="color: #ff0080;">▶</span> Community Events</li>
-                                        <li style="margin-bottom: 8px;"><span style="color: #ff0080;">▶</span> Custom Scenarios</li>
-                                        <li style="margin-bottom: 8px;"><span style="color: #ff0080;">▶</span> Real-time Chat</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <p class="form-subtitle">KISAH ROLE PLAY SIAP ON TOP.</p>
                 </div>
 
                 @auth
