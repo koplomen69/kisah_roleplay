@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'KISAH ROLEPLAY | ROBLOX')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!-- Header Navigation -->
     <header class="header">
@@ -21,14 +24,20 @@
 
                 <!-- Navigation Links -->
                 <div class="nav-links">
-                    <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Beranda</a>
-                    <a href="{{ route('leaderboard') }}" class="nav-link {{ request()->routeIs('leaderboard') ? 'active' : '' }}">Leaderboard</a>
-                    <a href="{{ route('donation') }}" class="nav-link {{ request()->routeIs('donation') ? 'active' : '' }}">Donasi</a>
+                    <a href="{{ route('home') }}"
+                        class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Beranda</a>
+                    <a href="{{ route('leaderboard') }}"
+                        class="nav-link {{ request()->routeIs('leaderboard') ? 'active' : '' }}">Leaderboard</a>
+                    <a href="{{ route('donasi') }}"
+                        class="nav-link {{ request()->routeIs('donasi') ? 'active' : '' }}">Donasi</a>
+                    <a href="{{ route('profile') }}"
+                        class="nav-link profile-btn {{ request()->routeIs('profile') ? 'active' : '' }}">PROFILE</a>
                 </div>
 
                 <!-- Profile Button -->
                 <div class="nav-actions">
-                    <a href="{{ route('profile') }}" class="btn-profile">PROFILE</a>
+                    <a href="{{ route('profile') }}"
+                        class="nav-link profile-btn {{ request()->routeIs('profile') ? 'active' : '' }}">PROFILE</a>
                 </div>
 
                 <!-- Mobile Menu Toggle -->
@@ -65,7 +74,7 @@
         <div class="mobile-menu-content">
             <a href="{{ route('home') }}" class="mobile-nav-link">Beranda</a>
             <a href="{{ route('leaderboard') }}" class="mobile-nav-link">Leaderboard</a>
-            <a href="{{ route('donation') }}" class="mobile-nav-link">Donasi</a>
+            <a href="{{ route('donasi') }}" class="mobile-nav-link">Donasi</a>
             <a href="{{ route('profile') }}" class="mobile-nav-link">Profile</a>
         </div>
     </div>
@@ -79,4 +88,5 @@
     </script>
 
 </body>
+
 </html>
