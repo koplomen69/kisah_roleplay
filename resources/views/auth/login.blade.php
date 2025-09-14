@@ -8,10 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Cyberpunk Auth Styles -->
-    <link href="{{ asset('css/cyberpunk-auth.css') }}" rel="stylesheet">
-    <!-- Cyberpunk Auth Styles -->
-    <link href="{{ asset('css/cyberpunk-auth.css') }}" rel="stylesheet">
+
+    <!-- Kota Roleplay Cyberpunk Styles -->
+    <link href="{{ asset('css/kota-roleplay.css') }}" rel="stylesheet">
+
+
 </head>
 <body>
     <!-- Floating particles -->

@@ -15,7 +15,7 @@ class AuthController extends Controller
     {
         // Redirect if already authenticated
         if (Auth::check()) {
-            return redirect()->route('dashboard');
+            return redirect('/');
         }
 
         return view('auth.login');
@@ -25,7 +25,7 @@ class AuthController extends Controller
     {
         // Redirect if already authenticated
         if (Auth::check()) {
-            return redirect()->route('dashboard');
+            return redirect('/');
         }
 
         return view('auth.register');
@@ -41,7 +41,7 @@ class AuthController extends Controller
         // Try to authenticate using the roblox_username field
         if (Auth::attempt(['roblox_username' => $credentials['roblox_username'], 'password' => $credentials['password']])) {
             $request->session()->regenerate();
-            return redirect()->intended('dashboard');
+            return redirect()->intended('/');
         }
 
         return back()->withErrors([
@@ -93,7 +93,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect('dashboard');
+        return redirect('/');
     }
 
     public function logout(Request $request)

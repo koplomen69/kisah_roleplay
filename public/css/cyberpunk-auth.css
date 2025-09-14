@@ -1,4 +1,4 @@
-/* Cyberpunk Authentication Styles */
+/* Kota Roleplay - Cyberpunk Style Inspired CSS */
 
 * {
     margin: 0;
@@ -8,13 +8,13 @@
 
 body {
     font-family: 'Rajdhani', sans-serif;
-    background: linear-gradient(135deg, #0a0014 0%, #1a0033 25%, #2d0a3d 50%, #4a1458 75%, #6b1e69 100%);
+    background: linear-gradient(135deg, #0B0015 0%, #1A0033 25%, #2D1B69 50%, #4A148C 75%, #6A1B99 100%);
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
 }
 
-/* Cyberpunk cityscape background */
+/* Dark Cyberpunk City Background */
 body::before {
     content: '';
     position: fixed;
@@ -23,10 +23,10 @@ body::before {
     width: 100%;
     height: 100%;
     background:
-        radial-gradient(circle at 20% 80%, rgba(255, 0, 128, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(255, 20, 147, 0.1) 0%, transparent 50%),
-        linear-gradient(90deg, transparent 0%, rgba(255, 0, 128, 0.03) 50%, transparent 100%);
+        radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 0, 128, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
+        linear-gradient(180deg, transparent 0%, rgba(0, 255, 255, 0.05) 50%, transparent 100%);
     z-index: -2;
 }
 
