@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.profile')
 
 @section('title', 'Profile - Kisah Roleplay')
 
@@ -327,6 +327,69 @@
                         @enderror
                     </div>
 
+                    <!-- Change Password Section -->
+                    <div class="mb-4">
+                        <h6 style="color: #D77CA8; font-family: 'Orbitron', monospace; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">
+                            <i class="fas fa-lock me-2"></i>Change Password (Optional)
+                        </h6>
+
+                        <!-- Current Password -->
+                        <div class="mb-3">
+                            <label for="current_password" class="form-label" style="color: #D77CA8; font-weight: bold; font-family: 'Orbitron', monospace;">
+                                <i class="fas fa-key me-2"></i>Current Password
+                            </label>
+                            <input type="password" class="form-control" id="current_password" name="current_password"
+                                   style="background: rgba(215, 124, 168, 0.1); border: 2px solid rgba(215, 124, 168, 0.3); color: #D77CA8; border-radius: 10px;"
+                                   placeholder="Enter current password">
+                            @error('current_password')
+                                <div class="text-danger mt-1" style="font-size: 0.85rem;">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <!-- New Password -->
+                        <div class="mb-3">
+                            <label for="new_password" class="form-label" style="color: #D77CA8; font-weight: bold; font-family: 'Orbitron', monospace;">
+                                <i class="fas fa-lock me-2"></i>New Password
+                            </label>
+                            <input type="password" class="form-control" id="new_password" name="new_password"
+                                   style="background: rgba(215, 124, 168, 0.1); border: 2px solid rgba(215, 124, 168, 0.3); color: #D77CA8; border-radius: 10px;"
+                                   placeholder="Enter new password">
+                            @error('new_password')
+                                <div class="text-danger mt-1" style="font-size: 0.85rem;">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <!-- Confirm New Password -->
+                        <div class="mb-3">
+                            <label for="new_password_confirmation" class="form-label" style="color: #D77CA8; font-weight: bold; font-family: 'Orbitron', monospace;">
+                                <i class="fas fa-lock me-2"></i>Confirm New Password
+                            </label>
+                            <input type="password" class="form-control" id="new_password_confirmation" name="new_password_confirmation"
+                                   style="background: rgba(215, 124, 168, 0.1); border: 2px solid rgba(215, 124, 168, 0.3); color: #D77CA8; border-radius: 10px;"
+                                   placeholder="Confirm new password">
+                            @error('new_password_confirmation')
+                                <div class="text-danger mt-1" style="font-size: 0.85rem;">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <small class="form-text" style="color: #D77CA8; opacity: 0.8;">
+                            <i class="fas fa-info-circle me-1"></i>Leave password fields empty if you don't want to change your password
+                        </small>
+                    </div>
+
+                    <!-- Sync Roblox Avatar Button -->
+                    @if(Auth::user()->roblox_username)
+                    <div class="mb-4">
+                        <button type="button" id="syncRobloxAvatar" class="btn btn-outline-warning w-100"
+                                style="border: 2px solid #ffc107; color: #ffc107; font-family: 'Orbitron', monospace; text-transform: uppercase; letter-spacing: 1px;">
+                            <i class="fab fa-roblox me-2"></i>Sync Avatar from Roblox
+                        </button>
+                        <small class="form-text" style="color: #D77CA8; opacity: 0.8;">
+                            <i class="fas fa-info-circle me-1"></i>This will automatically fetch your avatar from Roblox
+                        </small>
+                    </div>
+                    @endif
+
                     <!-- Preview Section -->
                     <div class="mt-4 p-3" style="background: rgba(215, 124, 168, 0.1); border: 1px solid rgba(215, 124, 168, 0.3); border-radius: 10px;">
                         <h6 style="color: #D77CA8; font-family: 'Orbitron', monospace; margin-bottom: 15px;">
@@ -497,6 +560,79 @@ document.addEventListener('DOMContentLoaded', function() {
             genderPreview.textContent = 'Gender not specified';
         }
     });
+
+    // Sync Roblox Avatar functionality
+    @if(Auth::user()->roblox_username)
+    const syncRobloxBtn = document.getElementById('syncRobloxAvatar');
+    if (syncRobloxBtn) {
+        syncRobloxBtn.addEventListener('click', function() {
+            const btn = this;
+            const originalText = btn.innerHTML;
+
+            // Show loading state
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Syncing...';
+            btn.disabled = true;
+
+            // Fetch avatar using server-side endpoint
+            fetch('{{ route("profile.sync-roblox-avatar") }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content') ||
+                                   document.querySelector('input[name="_token"]').value
+                }
+            })
+            .then(response => {
+                console.log('Response status:', response.status); // Debug logging
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Server response:', data); // Debug logging
+
+                if (data.success) {
+                    // Update the avatar URL input and preview
+                    avatarInput.value = data.avatar_url;
+                    avatarPreview.innerHTML = `<img src="${data.avatar_url}" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover;">`;
+
+                    // Show success message
+                    btn.innerHTML = '<i class="fas fa-check me-2"></i>Synced!';
+                    btn.style.borderColor = '#28a745';
+                    btn.style.color = '#28a745';
+
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.style.borderColor = '#ffc107';
+                        btn.style.color = '#ffc107';
+                        btn.disabled = false;
+                    }, 2000);
+                } else {
+                    throw new Error(data.error || 'Failed to sync avatar');
+                }
+            })
+            .catch(error => {
+                console.error('Error syncing Roblox avatar:', error);
+
+                // Show error state with more detailed message
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle me-2"></i>Error!';
+                btn.style.borderColor = '#dc3545';
+                btn.style.color = '#dc3545';
+
+                // Show error message to user
+                alert('Error syncing avatar: ' + (error.message || 'Unknown error'));
+
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.borderColor = '#ffc107';
+                    btn.style.color = '#ffc107';
+                    btn.disabled = false;
+                }, 2000);
+            });
+        });
+    }
+    @endif
 });
 </script>
 @endsection

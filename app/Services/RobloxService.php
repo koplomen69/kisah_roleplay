@@ -82,21 +82,52 @@ class RobloxService
     public function getUserAvatar(int $userId, string $size = '150x150'): ?string
     {
         try {
+            // Use the correct Roblox thumbnails API
             $response = Http::timeout(10)->get("https://thumbnails.roblox.com/v1/users/avatar-headshot", [
                 'userIds' => $userId,
                 'size' => $size,
-                'format' => 'Png',
-                'isCircular' => false
+                'format' => 'Png'
+            ]);
+
+            Log::info("Avatar API response for user $userId:", [
+                'status' => $response->status(),
+                'body' => $response->body()
             ]);
 
             if ($response->successful()) {
                 $data = $response->json();
-                if (!empty($data['data'][0]['imageUrl'])) {
+                if (!empty($data['data']) && !empty($data['data'][0]['imageUrl'])) {
                     return $data['data'][0]['imageUrl'];
                 }
             }
+
+            // Fallback: Try full body avatar if headshot fails
+            $response = Http::timeout(10)->get("https://thumbnails.roblox.com/v1/users/avatar", [
+                'userIds' => $userId,
+                'size' => $size,
+                'format' => 'Png'
+            ]);
+
+            Log::info("Fallback avatar API response for user $userId:", [
+                'status' => $response->status(),
+                'body' => $response->body()
+            ]);
+
+            if ($response->successful()) {
+                $data = $response->json();
+                if (!empty($data['data']) && !empty($data['data'][0]['imageUrl'])) {
+                    return $data['data'][0]['imageUrl'];
+                }
+            }
+
+            // Final fallback: Use direct Roblox image URL format
+            Log::info("Using direct Roblox image URL for user $userId");
+            return "https://www.roblox.com/headshot-thumbnail/image?userId=$userId&width=420&height=420&format=png";
+
         } catch (\Exception $e) {
             Log::error('Roblox Avatar API Error: ' . $e->getMessage());
+            // Return a default direct URL as absolute fallback
+            return "https://www.roblox.com/headshot-thumbnail/image?userId=$userId&width=420&height=420&format=png";
         }
 
         return null;

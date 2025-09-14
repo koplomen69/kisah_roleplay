@@ -29,17 +29,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#beranda">Beranda</a>
+                        <a class="nav-link" href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#leaderboard">Leaderboard</a>
+                        <a class="nav-link" href="{{ route('leaderboard') }}" class="nav-link {{ request()->routeIs('leaderboard') ? 'active' : '' }}">Leaderboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#donasi">Donasi</a>
+                        <a class="nav-link" href="{{ route('donasi') }}" class="nav-link {{ request()->routeIs('donasi') ? 'active' : '' }}">Donasi</a>
                     </li>
                     @auth
                         <li class="nav-item">
-                            <a class="nav-link btn btn-profile" href="{{ route('dashboard') }}">PROFILE</a>
+                            <a class="nav-link btn btn-profile" href="{{ route('profile') }}">PROFILE</a>
                         </li>
                     @else
                         <li class="nav-item">
@@ -61,18 +61,18 @@
                         <div class="landing-badge">
                             <i class="fas fa-star me-2"></i>KISAHROLEPLAY
                         </div>
-                        
+
                         <h1 class="landing-title">
                             SELAMAT DATANG DI<br>
                             <span class="title-highlight">DUNIA GELAP</span>
                         </h1>
-                        
+
                         <p class="landing-description">
                             BERGABUNGLAH DALAM PETUALANGAN ROLEPLAY TERBESAR DI INDONESIA.<br>
                             CIPTAKAN KARAKTER UNIKMU DAN JALANI KEHIDUPAN VIRTUAL YANG<br>
                             MENARIK BERSAMA RIBUAN PEMAIN LAINNYA.
                         </p>
-                        
+
                         <div class="landing-buttons">
                             <a href="https://discord.gg/nVKcz4GV" class="btn btn-discord-main" target="_blank">
                                 <i class="fab fa-discord me-2"></i>JOIN DISCORD
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Right Logo -->
                 <div class="col-lg-6 col-12">
                     <div class="landing-logo-section">
