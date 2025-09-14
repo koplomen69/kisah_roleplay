@@ -115,10 +115,10 @@ body::after {
 }
 
 @keyframes logoGlow {
-    0% { 
+    0% {
         text-shadow: 0 0 80px #ff0080;
     }
-    100% { 
+    100% {
         text-shadow: 0 0 120px #ff0080, 0 0 40px #ff1493;
     }
 }
@@ -161,7 +161,7 @@ body::after {
 }
 
 .form-label {
-    color: #00ffff !important;
+    color: #300000 !important;
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -260,11 +260,11 @@ fieldset legend {
 }
 
 .gender-option input[type="radio"]:checked + .gender-label {
-    border-color: #00ffff;
+    border-color: #480018ff;
     background: rgba(0, 255, 255, 0.1);
-    color: #00ffff;
+    color: #4A071Dff;
     box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.1);
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    text-shadow: 0 0 10px rgba(86, 0, 0, 0.5);
 }
 
 .gender-option input[type="radio"]:checked + .gender-label::before {
@@ -363,7 +363,7 @@ fieldset legend {
 }
 
 .cyberpunk-link {
-    color: #00ffff;
+    color: #4B021Bff;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -407,10 +407,10 @@ fieldset legend {
     position: absolute;
     width: 4px;
     height: 4px;
-    background: rgba(0, 255, 255, 0.6);
+    background: rgba(69, 0, 0, 0.6);
     border-radius: 50%;
     animation: float 15s infinite linear;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(113, 0, 0, 0.8);
 }
 
 .particle:nth-child(odd) {
@@ -442,24 +442,24 @@ fieldset legend {
         margin: 10px;
         max-width: none;
     }
-    
+
     .form-section {
         padding: 0 20px 30px;
     }
-    
+
     .logo-k {
         font-size: 3rem;
     }
-    
+
     .logo-text {
         font-size: 1rem;
         letter-spacing: 2px;
     }
-    
+
     .form-title {
         font-size: 1.5rem;
     }
-    
+
     .gender-container {
         flex-direction: column;
         gap: 10px;
@@ -470,15 +470,15 @@ fieldset legend {
     .cyberpunk-card {
         border-radius: 15px;
     }
-    
+
     .logo-k {
         font-size: 2.5rem;
     }
-    
+
     .form-title {
         font-size: 1.3rem;
     }
-    
+
     .form-section {
         padding: 0 15px 25px;
     }

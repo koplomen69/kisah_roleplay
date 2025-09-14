@@ -3,7 +3,7 @@
 @section('title', 'Profile - Kisah Roleplay')
 
 @section('content')
-<div class="container-fluid py-4" style="background: linear-gradient(135deg, #480018 0%, #4B021B 25%, #4A071D 50%, #98194A 75%, #D77CA8 100%); min-height: 100vh;">
+
 
     <!-- Success/Error Messages -->
     @if(session('success'))
@@ -56,23 +56,23 @@
                             </div>
                         </div>
 
-                        <div class="stat-item mb-4" style="background: rgba(255, 20, 147, 0.1); padding: 15px; border-radius: 10px; border-left: 4px solid #FF1493;">
+                        <div class="stat-item mb-4" style="background: rgba(255, 20, 147, 0.1); padding: 15px; border-radius: 10px; border-left: 4px solid #00FFFF;">
                             <div class="d-flex align-items-center">
-                                <i class="fas fa-envelope me-3" style="color: #FF1493; font-size: 1.5rem;"></i>
+                                <i class="fas fa-envelope me-3" style="color: #00FFFF; font-size: 1.5rem;"></i>
                                 <div>
-                                    <small style="color: #D77CA8; opacity: 0.8;">Email</small>
-                                    <div style="color: #FF1493; font-weight: bold; font-size: 0.9rem;">{{ Auth::user()->email }}</div>
+                                    <small style="color: #00FFFF; opacity: 0.8;">Email</small>
+                                    <div style="color: #00FFFF; font-weight: bold; font-size: 0.9rem;">{{ Auth::user()->email }}</div>
                                 </div>
                             </div>
                         </div>
 
                         @if(Auth::user()->roblox_username)
-                        <div class="stat-item mb-4" style="background: rgba(152, 25, 74, 0.2); padding: 15px; border-radius: 10px; border-left: 4px solid #98194A;">
+                        <div class="stat-item mb-4" style="background: rgba(152, 25, 74, 0.2); padding: 15px; border-radius: 10px; border-left: 4px solid #00FFFF;">
                             <div class="d-flex align-items-center">
                                 <i class="fab fa-roblox me-3" style="color: #98194A; font-size: 1.5rem;"></i>
                                 <div>
-                                    <small style="color: #D77CA8; opacity: 0.8;">Roblox Username</small>
-                                    <div style="color: #98194A; font-weight: bold;">{{ Auth::user()->roblox_username }}</div>
+                                    <small style="color: #00FFFF; opacity: 0.8;">Roblox Username</small>
+                                    <div style="color: #00FFFF; font-weight: bold;">{{ Auth::user()->roblox_username }}</div>
                                 </div>
                             </div>
                         </div>
@@ -253,7 +253,7 @@
                             @else
                                 <div class="text-center py-5">
                                     <i class="fas fa-shopping-bag display-4 mb-3" style="color: #D77CA8; opacity: 0.5;"></i>
-                                    <p class="text-muted">No kantong data available</p>
+                                    <p class="text-muted" >No kantong data available</p>
                                 </div>
                             @endif
                         </div>
@@ -432,89 +432,6 @@
     </div>
 </div>
 
-<style>
-:root {
-    --primary-color: #480018;
-    --secondary-color: #4B021B;
-    --tertiary-color: #4A071D;
-    --accent-color: #98194A;
-    --highlight-color: #D77CA8;
-    --cyber-blue: #00FFFF;
-    --cyber-pink: #FF1493;
-}
-
-body {
-    font-family: 'Rajdhani', sans-serif;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: var(--highlight-color);
-    overflow-x: hidden;
-}
-
-.card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3) !important;
-}
-
-.btn:hover {
-    background: rgba(255, 20, 147, 0.2) !important;
-    border-color: #FF1493 !important;
-    box-shadow: 0 0 15px rgba(255, 20, 147, 0.5);
-    transform: translateY(-2px);
-}
-
-.btn-outline-info:hover {
-    background: rgba(0, 255, 255, 0.2) !important;
-    border-color: #00FFFF !important;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-    transform: translateY(-2px);
-}
-
-.table-info {
-    background-color: rgba(0, 255, 255, 0.2) !important;
-    animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-    from {
-        box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
-    }
-    to {
-        box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
-    }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .container-fluid {
-        padding: 15px !important;
-    }
-
-    .card-header h5 {
-        font-size: 0.9rem;
-    }
-
-    .table th,
-    .table td {
-        font-size: 0.8rem;
-        padding: 8px 4px;
-    }
-}
-
-/* Modal Styles */
-.modal-content {
-    box-shadow: 0 0 50px rgba(0, 255, 255, 0.4);
-}
-
-.form-control:focus,
-.form-select:focus {
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-    border-color: #00FFFF;
-}
-</style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

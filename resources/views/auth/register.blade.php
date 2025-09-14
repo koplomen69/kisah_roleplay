@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- Kota Roleplay Cyberpunk Styles -->
     <link href="{{ asset('css/kota-roleplay.css') }}" rel="stylesheet">
 </head>
@@ -37,6 +39,13 @@
             <div class="form-section">
                 <h2 class="form-title">Create an Account</h2>
                 <p class="form-subtitle">Fill in the details below to create a new account.</p>
+
+                @if(session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert" style="background: rgba(0, 255, 0, 0.1); border: 2px solid #00FF00; color: #00FF00; border-radius: 10px; margin-bottom: 20px;">
+                        <i class="fas fa-check-circle me-2"></i>{{ session('success') }}
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
 
                 @if($errors->any())
                     <div class="error-alert">
@@ -132,5 +141,19 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Auto-hide success alerts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auto-hide success alerts after 5 seconds
+            const successAlerts = document.querySelectorAll('.alert-success');
+            successAlerts.forEach(function(alert) {
+                setTimeout(function() {
+                    const bsAlert = new bootstrap.Alert(alert);
+                    bsAlert.close();
+                }, 5000); // 5 seconds
+            });
+        });
+    </script>
 </body>
 </html>

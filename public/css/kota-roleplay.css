@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Rajdhani', sans-serif;
-    background: linear-gradient(135deg, #1A0011 0%, #330022 25%, #660033 50%, #800040 75%, #990044 100%);
+    background: linear-gradient(135deg, #480018 0%, #4B021B 25%, #4A071D 50%, #98194A 75%, #D77CA8 100%);
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
@@ -23,11 +23,11 @@ body::before {
     width: 100%;
     height: 100%;
     background:
-        radial-gradient(circle at 20% 80%, rgba(255, 0, 128, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(255, 20, 147, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 60% 60%, rgba(220, 20, 60, 0.1) 0%, transparent 50%),
-        linear-gradient(180deg, transparent 0%, rgba(255, 0, 128, 0.08) 50%, transparent 100%);
+        radial-gradient(circle at 20% 80%, rgba(255, 0, 128, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 20, 147, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 60% 60%, rgba(220, 20, 60, 0.05) 0%, transparent 50%),
+        linear-gradient(180deg, transparent 0%, rgba(255, 0, 128, 0.03) 50%, transparent 100%);
     z-index: -2;
 }
 
@@ -40,9 +40,9 @@ body::after {
     width: 100%;
     height: 100%;
     background-image:
-        linear-gradient(90deg, rgba(255, 0, 128, 0.15) 1px, transparent 1px),
-        linear-gradient(0deg, rgba(255, 0, 128, 0.15) 1px, transparent 1px),
-        linear-gradient(45deg, rgba(0, 255, 255, 0.08) 1px, transparent 1px);
+        linear-gradient(90deg, rgba(255, 0, 128, 0.08) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255, 0, 128, 0.08) 1px, transparent 1px),
+        linear-gradient(45deg, rgba(0, 255, 255, 0.04) 1px, transparent 1px);
     background-size: 80px 80px, 80px 80px, 40px 40px;
     z-index: -1;
     animation: neonGrid 20s linear infinite;
@@ -61,14 +61,14 @@ body::after {
 
 /* Main Card - Kota Roleplay Style */
 .cyberpunk-card {
-    background: rgba(20, 5, 15, 0.95);
+    background: rgba(8, 2, 6, 0.98);
     backdrop-filter: blur(25px);
     border: 3px solid transparent;
     border-radius: 25px;
-    box-shadow: 
-        0 0 200px rgba(255, 0, 128, 0.4),
-        0 0 100px rgba(0, 255, 255, 0.2),
-        inset 0 0 50px rgba(255, 0, 128, 0.08);
+    box-shadow:
+        0 0 100px rgba(255, 0, 128, 0.2),
+        0 0 50px rgba(0, 255, 255, 0.1),
+        inset 0 0 50px rgba(255, 0, 128, 0.04);
     position: relative;
     overflow: hidden;
     max-width: 600px;
@@ -84,7 +84,7 @@ body::after {
     right: -4px;
     bottom: -4px;
     background: linear-gradient(45deg,
-        #FF0080, #00FFFF, #FF1493, #DC143C, #FF0080, #00FFFF);
+        #1A000A, #001414, #200010, #4A0020, #66003D, #001A1A);
     border-radius: 28px;
     z-index: -1;
     animation: kotaBorderGlow 4s ease-in-out infinite;
@@ -92,21 +92,21 @@ body::after {
 }
 
 @keyframes kotaBorderGlow {
-    0%, 100% { 
+    0%, 100% {
         background-position: 0% 50%;
-        filter: brightness(1) saturate(1.2);
+        filter: brightness(0.8) saturate(1.0);
     }
-    25% { 
+    25% {
         background-position: 100% 50%;
-        filter: brightness(1.3) saturate(1.5);
+        filter: brightness(1.0) saturate(1.2);
     }
-    50% { 
+    50% {
         background-position: 50% 100%;
-        filter: brightness(1.1) saturate(1.3);
+        filter: brightness(0.9) saturate(1.1);
     }
-    75% { 
+    75% {
         background-position: 50% 0%;
-        filter: brightness(1.4) saturate(1.6);
+        filter: brightness(1.1) saturate(1.3);
     }
 }
 
@@ -122,11 +122,11 @@ body::after {
     font-size: 5rem;
     font-weight: 900;
     color: #FFFFFF;
-    text-shadow: 
-        0 0 120px #FF0080,
-        0 0 80px #00FFFF,
-        0 0 40px #FF1493,
-        0 0 20px #FFFFFF;
+    text-shadow:
+        0 0 60px #1F000C,
+        0 0 40px #001C1C,
+        0 0 20px #15000A,
+        0 0 10px #FFFFFF;
     position: relative;
     display: inline-block;
     animation: kotaLogoGlow 4s ease-in-out infinite;
@@ -138,39 +138,39 @@ body::after {
     top: 0;
     left: 0;
     color: #FF0080;
-    text-shadow: 
-        0 0 100px #FF0080,
-        0 0 60px #00FFFF,
-        0 0 30px #FF1493;
+    text-shadow:
+        0 0 50px #1F000C,
+        0 0 30px #001C1C,
+        0 0 15px #15000A;
     animation: logoGlitch 0.15s infinite;
     opacity: 0;
 }
 
 @keyframes kotaLogoGlow {
-    0%, 100% { 
-        text-shadow: 
-            0 0 120px #FF0080,
-            0 0 80px #00FFFF,
-            0 0 40px #FF1493,
-            0 0 20px #FFFFFF;
+    0%, 100% {
+        text-shadow:
+            0 0 60px #FF0080,
+            0 0 40px #001515,
+            0 0 20px #1A000D,
+            0 0 10px #FFFFFF;
         transform: scale(1);
     }
-    50% { 
-        text-shadow: 
-            0 0 180px #FF0080,
-            0 0 120px #00FFFF,
-            0 0 60px #FF1493,
-            0 0 30px #DC143C,
-            0 0 15px #FFFFFF;
+    50% {
+        text-shadow:
+            0 0 90px #2E0012,
+            0 0 60px #001919,
+            0 0 30px #2F0014,
+            0 0 15px #200008,
+            0 0 8px #FFFFFF;
         transform: scale(1.03);
     }
 }
 
 @keyframes logoGlitch {
     0%, 95%, 100% { opacity: 0; }
-    96%, 99% { 
-        opacity: 0.9; 
-        transform: translateX(3px) scale(1.01); 
+    96%, 99% {
+        opacity: 0.9;
+        transform: translateX(3px) scale(1.01);
     }
 }
 
@@ -181,23 +181,23 @@ body::after {
     font-weight: 700;
     letter-spacing: 4px;
     margin-top: 15px;
-    text-shadow: 
-        0 0 30px #00FFFF,
-        0 0 15px #FF0080;
+    text-shadow:
+        0 0 15px #002121,
+        0 0 8px #1A000D;
     animation: textPulse 3s ease-in-out infinite;
 }
 
 @keyframes textPulse {
-    0%, 100% { 
-        text-shadow: 
-            0 0 30px #00FFFF,
-            0 0 15px #FFFFFF;
+    0%, 100% {
+        text-shadow:
+            0 0 15px #001414,
+            0 0 8px #FFFFFF;
     }
-    50% { 
-        text-shadow: 
-            0 0 50px #00FFFF,
-            0 0 25px #FFFFFF,
-            0 0 10px #FF0080;
+    50% {
+        text-shadow:
+            0 0 25px #00FFFF,
+            0 0 12px #FFFFFF,
+            0 0 5px #FF0080;
     }
 }
 
@@ -213,7 +213,7 @@ body::after {
     font-weight: 700;
     text-align: center;
     margin-bottom: 15px;
-    text-shadow: 
+    text-shadow:
         0 0 40px rgba(0, 255, 255, 0.6),
         0 0 20px rgba(255, 0, 128, 0.4),
         0 0 10px rgba(255, 255, 255, 0.3);
@@ -221,14 +221,14 @@ body::after {
 }
 
 @keyframes titleGlow {
-    0%, 100% { 
-        text-shadow: 
+    0%, 100% {
+        text-shadow:
             0 0 40px rgba(0, 255, 255, 0.6),
             0 0 20px rgba(255, 0, 128, 0.4),
             0 0 10px rgba(255, 255, 255, 0.3);
     }
-    50% { 
-        text-shadow: 
+    50% {
+        text-shadow:
             0 0 60px rgba(0, 255, 255, 0.8),
             0 0 30px rgba(255, 0, 128, 0.6),
             0 0 15px rgba(255, 255, 255, 0.5);
@@ -241,20 +241,20 @@ body::after {
     margin-bottom: 40px;
     font-size: 1.1rem;
     font-weight: 500;
-    text-shadow: 
+    text-shadow:
         0 0 20px rgba(0, 255, 255, 0.4),
         0 0 10px rgba(255, 0, 128, 0.3);
     animation: subtitleGlow 3s ease-in-out infinite alternate;
 }
 
 @keyframes subtitleGlow {
-    0% { 
-        text-shadow: 
+    0% {
+        text-shadow:
             0 0 20px rgba(0, 255, 255, 0.4),
             0 0 10px rgba(255, 0, 128, 0.3);
     }
-    100% { 
-        text-shadow: 
+    100% {
+        text-shadow:
             0 0 30px rgba(0, 255, 255, 0.6),
             0 0 15px rgba(255, 0, 128, 0.4);
     }
@@ -262,7 +262,7 @@ body::after {
 
 /* Cyberpunk Buttons */
 .btn-cyberpunk {
-    background: linear-gradient(135deg, #FF0080 0%, #00FFFF 50%, #FF1493 100%) !important;
+    background: linear-gradient(135deg, #1A0009 0%, #001212 50%, #200010 100%) !important;
     border: 2px solid #FF0080 !important;
     border-radius: 15px !important;
     color: #FFFFFF !important;
@@ -273,10 +273,10 @@ body::after {
     letter-spacing: 3px;
     padding: 16px 0;
     transition: all 0.3s ease;
-    box-shadow: 
-        0 0 40px rgba(255, 0, 128, 0.6),
-        0 0 20px rgba(0, 255, 255, 0.3),
-        inset 0 0 20px rgba(255, 255, 255, 0.1);
+    box-shadow:
+        0 0 20px rgba(255, 0, 128, 0.3),
+        0 0 10px rgba(0, 255, 255, 0.15),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
     position: relative;
     overflow: hidden;
 }
@@ -293,11 +293,11 @@ body::after {
 }
 
 .btn-cyberpunk:hover {
-    background: linear-gradient(135deg, #00FFFF 0%, #FF0080 50%, #DC143C 100%) !important;
-    box-shadow: 
-        0 0 60px rgba(255, 0, 128, 0.9),
-        0 0 120px rgba(0, 255, 255, 0.5),
-        inset 0 0 30px rgba(255, 255, 255, 0.2) !important;
+    background: linear-gradient(135deg, #002121 0%, #200010 50%, #150006 100%) !important;
+    box-shadow:
+        0 0 30px rgba(40, 0, 20, 0.6),
+        0 0 60px rgba(0, 32, 32, 0.3),
+        inset 0 0 30px rgba(255, 255, 255, 0.1) !important;
     transform: translateY(-3px) scale(1.02);
     color: #FFFFFF !important;
     border-color: #00FFFF !important;
@@ -322,27 +322,27 @@ body::after {
     position: absolute;
     width: 6px;
     height: 6px;
-    background: rgba(0, 255, 255, 0.8);
+    background: rgba(40, 0, 15, 0.6);
     border-radius: 50%;
     animation: kotaFloat 20s infinite linear;
-    box-shadow: 
-        0 0 20px rgba(0, 255, 255, 1),
-        0 0 40px rgba(0, 255, 255, 0.5);
+    box-shadow:
+        0 0 10px rgba(0, 20, 20, 0.5),
+        0 0 20px rgba(10, 25, 25, 0.3);
 }
 
 .particle:nth-child(odd) {
-    background: rgba(255, 0, 128, 0.8);
-    box-shadow: 
-        0 0 20px rgba(255, 0, 128, 1),
-        0 0 40px rgba(255, 0, 128, 0.5);
+    background: rgba(255, 0, 128, 0.4);
+    box-shadow:
+        0 0 10px rgba(255, 0, 128, 0.6),
+        0 0 20px rgba(255, 0, 128, 0.3);
     animation-duration: 16s;
 }
 
 .particle:nth-child(3n) {
-    background: rgba(138, 43, 226, 0.8);
-    box-shadow: 
-        0 0 20px rgba(138, 43, 226, 1),
-        0 0 40px rgba(138, 43, 226, 0.5);
+    background: rgba(138, 43, 226, 0.4);
+    box-shadow:
+        0 0 10px rgba(138, 43, 226, 0.6),
+        0 0 20px rgba(138, 43, 226, 0.3);
     animation-duration: 24s;
 }
 
@@ -365,7 +365,7 @@ body::after {
 
 /* Form Controls */
 .form-label {
-    color: #00FFFF !important;
+    color: #ffffff !important;
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -375,8 +375,8 @@ body::after {
 }
 
 .form-control {
-    background: rgba(0, 0, 0, 0.6) !important;
-    border: 2px solid rgba(255, 0, 128, 0.3) !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 2px solid rgba(255, 0, 128, 0.2) !important;
     border-radius: 12px !important;
     color: #ffffff !important;
     font-family: 'Rajdhani', sans-serif;
@@ -384,13 +384,13 @@ body::after {
     font-weight: 500;
     padding: 12px 16px;
     transition: all 0.3s ease;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7);
 }
 
 .form-control:focus {
-    background: rgba(0, 20, 30, 0.8) !important;
+    background: rgba(0, 8, 12, 0.9) !important;
     border-color: #FF0080 !important;
-    box-shadow: inset 0 0 20px rgba(255, 0, 128, 0.1), 0 0 30px rgba(255, 0, 128, 0.3) !important;
+    box-shadow: inset 0 0 20px rgba(255, 0, 128, 0.05), 0 0 15px rgba(255, 0, 128, 0.2) !important;
     color: #ffffff !important;
 }
 
@@ -418,13 +418,13 @@ body::after {
 .gender-option .gender-label {
     display: block;
     padding: 14px;
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(255, 0, 128, 0.3);
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(255, 0, 128, 0.2);
     border-radius: 12px;
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    color: #888;
+    color: #666;
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -440,16 +440,16 @@ body::after {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 0, 128, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 128, 0.05), transparent);
     transition: left 0.5s ease;
 }
 
 .gender-option input[type="radio"]:checked + .gender-label {
     border-color: #FF0080;
-    background: rgba(255, 0, 128, 0.1);
+    background: rgba(255, 0, 128, 0.05);
     color: #FF0080;
-    box-shadow: inset 0 0 20px rgba(255, 0, 128, 0.1), 0 0 30px rgba(255, 0, 128, 0.3);
-    text-shadow: 0 0 10px rgba(255, 0, 128, 0.5);
+    box-shadow: inset 0 0 20px rgba(255, 0, 128, 0.05), 0 0 15px rgba(255, 0, 128, 0.15);
+    text-shadow: 0 0 5px rgba(255, 0, 128, 0.3);
 }
 
 .gender-option input[type="radio"]:checked + .gender-label::before {
@@ -464,13 +464,13 @@ fieldset {
 }
 
 fieldset legend {
-    color: #00FFFF !important;
+    color: #001919 !important;
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 8px;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    text-shadow: 0 0 5px rgba(0, 25, 25, 0.2);
     padding: 0;
     float: none;
     width: auto;
@@ -512,8 +512,8 @@ fieldset legend {
 }
 
 .divider span {
-    background: rgba(20, 5, 15, 0.9);
-    color: #888;
+    background: rgba(8, 2, 6, 0.95);
+    color: #666;
     padding: 0 20px;
     font-size: 0.9rem;
     font-weight: 500;
@@ -521,49 +521,49 @@ fieldset legend {
 
 /* Discord Button */
 .btn-discord {
-    background: linear-gradient(135deg, #5865F2 0%, #4752C4 100%) !important;
-    border: 2px solid rgba(88, 101, 242, 0.5) !important;
+    background: linear-gradient(135deg, #3A4BB8 0%, #2E3A8C 100%) !important;
+    border: 2px solid rgba(58, 75, 184, 0.3) !important;
     border-radius: 12px !important;
     color: #ffffff !important;
     font-weight: 600;
     padding: 12px 0;
     transition: all 0.3s ease;
-    box-shadow: 0 0 15px rgba(88, 101, 242, 0.3);
+    box-shadow: 0 0 8px rgba(58, 75, 184, 0.2);
 }
 
 .btn-discord:hover {
-    background: linear-gradient(135deg, #4752C4 0%, #5865F2 100%) !important;
-    box-shadow: 0 0 25px rgba(88, 101, 242, 0.5);
+    background: linear-gradient(135deg, #2E3A8C 0%, #3A4BB8 100%) !important;
+    box-shadow: 0 0 12px rgba(58, 75, 184, 0.3);
     transform: translateY(-2px);
     color: #ffffff !important;
 }
 
 /* Cyberpunk Links */
 .cyberpunk-link {
-    color: #00ffff;
+    color: #CCB347;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
-    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+    text-shadow: 0 0 3px rgba(0, 255, 255, 0.2);
 }
 
 .cyberpunk-link:hover {
-    color: #ff0080;
-    text-shadow: 0 0 10px rgba(255, 0, 128, 0.5);
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 0, 128, 0.3);
 }
 
 /* Auth Links */
 .auth-links span {
-    color: #00FFFF;
+    color: #ffffff;
     font-size: 1rem;
     font-weight: 500;
-    text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    text-shadow: 0 0 8px rgba(0, 26, 26, 0.4);
     animation: linkGlow 2s ease-in-out infinite alternate;
 }
 
 @keyframes linkGlow {
-    0% { text-shadow: 0 0 15px rgba(0, 255, 255, 0.6); }
-    100% { text-shadow: 0 0 25px rgba(0, 255, 255, 0.9); }
+    0% { text-shadow: 0 0 8px rgba(75, 0, 0, 0.4); }
+    100% { text-shadow: 0 0 12px rgba(79, 14, 0, 0.6); }
 }
 
 /* Responsive Design */
@@ -572,20 +572,20 @@ fieldset legend {
         margin: 15px;
         max-width: none;
     }
-    
+
     .form-section {
         padding: 0 30px 40px;
     }
-    
+
     .logo-k {
         font-size: 3.5rem;
     }
-    
+
     .logo-text {
         font-size: 1.1rem;
         letter-spacing: 3px;
     }
-    
+
     .form-title {
         font-size: 1.8rem;
     }
@@ -596,15 +596,15 @@ fieldset legend {
         border-radius: 20px;
         margin: 10px;
     }
-    
+
     .logo-k {
         font-size: 3rem;
     }
-    
+
     .form-title {
         font-size: 1.5rem;
     }
-    
+
     .form-section {
         padding: 0 25px 35px;
     }
