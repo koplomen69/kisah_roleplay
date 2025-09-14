@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'avatar_url',
         'gender',
         'roblox_id',
         'roblox_username',
@@ -72,5 +73,13 @@ class User extends Authenticatable
     public function getDisplayNameAttribute(): string
     {
         return $this->roblox_display_name ?? $this->roblox_username ?? $this->name;
+    }
+
+    /**
+     * Get the player stats for this user
+     */
+    public function playerStats()
+    {
+        return $this->hasOne(PlayerStats::class);
     }
 }

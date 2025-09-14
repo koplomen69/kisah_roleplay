@@ -25,7 +25,7 @@
         <div class="particle" style="left: 90%; animation-delay: 16s;"></div>
     </div>
 
-    <div class="container-fluid auth-container d-flex align-items-center justify-content-center">
+    <div class="container-fluid auth-container d-flex align-items-center justify-content-center min-vh-100">
         <div class="cyberpunk-card" style="max-width: 600px;">
             <!-- Logo Section -->
             <div class="logo-section">
@@ -37,12 +37,14 @@
             <div class="form-section">
                 <h2 class="form-title">Welcome to the Future</h2>
                 <p class="form-subtitle">KISAH ROLE PLAY SIAP ON TOP.</p>
+
                 </div>
 
                 @auth
                     <div class="mb-4">
-                        <div class="alert" style="background: rgba(0, 255, 0, 0.1); border: 1px solid rgba(0, 255, 0, 0.3); border-radius: 12px; color: #00ff00;">
-                            <strong>System Status:</strong> Logged in as {{ Auth::user()->name }}
+                        <div class="alert alert-success">
+                            <strong><i class="fas fa-check-circle me-2"></i>System Status:</strong>
+                            Logged in as {{ Auth::user()->name }}
                         </div>
                     </div>
 
@@ -52,7 +54,7 @@
                         </a>
                         <form method="POST" action="{{ route('logout') }}" class="d-inline">
                             @csrf
-                            <button type="submit" class="btn w-100" style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); border: none; border-radius: 12px; color: #ffffff; font-weight: 600; padding: 12px;">
+                            <button type="submit" class="btn btn-logout w-100">
                                 <i class="fas fa-sign-out-alt me-2"></i>Logout
                             </button>
                         </form>
@@ -65,16 +67,16 @@
                             </a>
                         </div>
                         <div class="col-md-6">
-                            <a href="{{ route('register') }}" class="btn w-100" style="background: linear-gradient(135deg, #8a2be2 0%, #9932cc 100%); border: none; border-radius: 12px; color: #ffffff; font-family: 'Orbitron', monospace; font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; padding: 14px 0;">
+                            <a href="{{ route('register') }}" class="btn btn-register w-100">
                                 <i class="fas fa-user-plus me-2"></i>Register
                             </a>
                         </div>
                     </div>
                 @endauth
 
-                <div class="text-center">
-                    <small class="auth-links">
-                        <span>Powered by Neural Network v2.0.1</span>
+                <div class="auth-links">
+                    <small>
+                        <i class="fas fa-brain me-2"></i>Powered by Neural Network v2.0.1
                     </small>
                 </div>
             </div>
