@@ -1,10 +1,15 @@
 /* Kota Roleplay - Cyberpunk Style Inspired CSS */
 
+:root {
+    --landing-translate-y: -20px;  /* default vertical nudge on large screens */
+    --landing-translate-y-desktop: -30px; /* stronger nudge for very large screens */
+}
+
 * {
-    margin: 1;
-    padding: 1;
     box-sizing: border-box;
 }
+
+/* landing-inline styles have been moved to public/css/landing-inline.css */
 
 body {
     font-family: 'Rajdhani', sans-serif;
@@ -54,7 +59,7 @@ body::after {
 }
 
 .auth-container {
-    min-height: 100vh;
+    min-height: 10px;
     position: relative;
     backdrop-filter: blur(1px);
 }
@@ -113,7 +118,6 @@ body::after {
 /* Logo Section - "K" Style */
 .logo-section {
     text-align: center;
-    padding: 40px 0 30px;
     position: relative;
 }
 
@@ -402,8 +406,8 @@ body::after {
 /* Gender Radio Buttons */
 .gender-container {
     display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 5px;
+    margin-bottom: 2px;
 }
 
 .gender-option {
@@ -571,24 +575,32 @@ fieldset legend {
     background: rgba(20, 5, 15, 0.95) !important;
     backdrop-filter: blur(15px);
     border-bottom: 2px solid rgba(255, 0, 128, 0.3);
-    padding: 15px 0;
-    box-shadow: 0 5px 30px rgba(255, 0, 128, 0.2);
-    position: fixed;
+    padding: 0;
+    box-shadow: 0 5px 3px rgba(255, 0, 128, 0.2);
+    position: flex;
     top: 0;
     width: 100%;
     z-index: 1000;
 }
 
-.nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+/* Hide-on-scroll helper: when `.navbar-hidden` is applied the nav moves up and fades */
+.cyberpunk-navbar {
+    transition: transform 300ms cubic-bezier(.2,.9,.2,1), opacity 300ms ease-in-out;
+    will-change: transform, opacity;
 }
 
+.cyberpunk-navbar.navbar-hidden {
+    transform: translateY(-110%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Navbar brand stays on the left by default; keep original sizing below. */
+
+
 .nav-logo-img {
-    width: 60px;
-    height: 60px;
-    filter: drop-shadow(0 0 20px #FF0080) drop-shadow(0 0 40px #00FFFF);
+    width: 100px;
+    height: 100px;
     animation: navLogoGlow 3s ease-in-out infinite;
 }
 
@@ -659,6 +671,16 @@ fieldset legend {
     position: relative;
     z-index: 2;
 }
+
+/* Landing/hero-specific CSS has been moved to public/css/landing-inline.css */
+
+/* Base sizing for inline logo (kept with visual rules below) */
+
+/* Nudge the landing floating logo up slightly on large monitors so it
+   visually centers better with the hero content. Adjust values if needed. */
+/* Large-screen landing nudges moved to public/css/landing-inline.css */
+
+/* Note: large-screen placement is handled in the single 992px media query above */
 
 .landing-badge {
     background: linear-gradient(135deg, rgba(255, 0, 128, 0.2), rgba(0, 255, 255, 0.1));
@@ -808,38 +830,8 @@ fieldset legend {
     left: 100%;
 }
 
-/* Right Logo Section */
-.landing-logo-section {
-    padding: 60px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
 
-.landing-logo {
-    position: relative;
-    z-index: 2;
-}
 
-.logo-image-container {
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.main-logo-img {
-    width: 200px;
-    height: 200px;
-    filter: 
-        drop-shadow(0 0 50px #FF0080)
-        drop-shadow(0 0 100px #00FFFF)
-        drop-shadow(0 0 150px rgba(255, 0, 128, 0.3))
-        drop-shadow(0 0 200px rgba(0, 255, 255, 0.2));
-    animation: mainLogoGlow 4s ease-in-out infinite;
-    transition: all 0.3s ease;
-}
-}
 
 @keyframes mainLogoGlow {
     0%, 100% {
@@ -871,57 +863,15 @@ fieldset legend {
         drop-shadow(0 0 60px #FFFFFF);
 }
 
-/* Logo Combined Container */
-.logo-combined-container {
-    gap: 30px;
-    flex-wrap: nowrap;
-}
 
-.logo-image-wrapper {
-    flex-shrink: 0;
-}
-
-.logo-text-wrapper {
-    flex-shrink: 0;
-}
-
-/* Floating Logo - Sejajar dengan konten */
-.landing-logo-floating {
-    margin-top: 80px; /* Sejajarkan dengan judul */
-}
-
-.logo-combined-container-inline {
-    gap: 15px;
-    flex-wrap: nowrap;
-    align-items: center;
-}
-
-.logo-image-wrapper-inline {
-    flex-shrink: 0;
-}
-
-.logo-text-wrapper-inline {
-    flex-shrink: 0;
-}
-
-.main-logo-img-inline {
-    width: 100px;
-    height: 100px;
-    filter: 
-        drop-shadow(0 0 25px #FF0080)
-        drop-shadow(0 0 50px #00FFFF)
-        drop-shadow(0 0 75px rgba(255, 0, 128, 0.3))
-        drop-shadow(0 0 100px rgba(0, 255, 255, 0.2));
-    animation: mainLogoGlow 4s ease-in-out infinite;
-    transition: all 0.3s ease;
-}
+/* Inline landing logo visuals moved to public/css/landing-inline.css */
 
 .logo-sub-inline {
     font-family: 'Orbitron', monospace;
     font-size: 2.2rem;
     font-weight: 900;
     color: #FFFFFF;
-    text-shadow: 
+    text-shadow:
         0 0 35px #FF0080,
         0 0 70px #00FFFF,
         0 0 18px #FFFFFF;
@@ -945,7 +895,7 @@ fieldset legend {
     font-size: 4rem;
     font-weight: 900;
     color: #FFFFFF;
-    text-shadow: 
+    text-shadow:
         0 0 60px #FF0080,
         0 0 120px #00FFFF,
         0 0 30px #FFFFFF;
@@ -979,57 +929,57 @@ fieldset legend {
         margin: 15px;
         max-width: none;
     }
-    
+
     .form-section {
         padding: 0 30px 40px;
     }
-    
+
     .logo-k {
         font-size: 3.5rem;
     }
-    
+
     .logo-text {
         font-size: 1.1rem;
         letter-spacing: 3px;
     }
-    
+
     .form-title {
         font-size: 1.8rem;
     }
-    
+
     /* Responsive logo layout */
     .logo-combined-container {
         flex-direction: column;
-        gap: 20px;
+        gap: 2px;
     }
-    
+
     .main-logo-img {
         width: 150px;
         height: 150px;
     }
-    
+
     .logo-sub {
         font-size: 2.5rem;
         letter-spacing: 4px;
     }
-    
+
     /* Responsive floating logo */
     .landing-logo-floating {
         margin-top: 40px;
         text-align: center;
     }
-    
+
     .logo-combined-container-inline {
         flex-direction: column;
         gap: 15px;
         justify-content: center;
     }
-    
+
     .main-logo-img-inline {
         width: 80px;
         height: 80px;
     }
-    
+
     .logo-sub-inline {
         font-size: 1.8rem;
         letter-spacing: 2px;
@@ -1041,44 +991,44 @@ fieldset legend {
         border-radius: 20px;
         margin: 10px;
     }
-    
+
     .logo-k {
         font-size: 3rem;
     }
-    
+
     .form-title {
         font-size: 1.5rem;
     }
-    
+
     .form-section {
         padding: 0 25px 35px;
     }
-    
+
     /* Mobile small logo adjustments */
     .main-logo-img {
         width: 120px;
         height: 120px;
     }
-    
+
     .logo-sub {
         font-size: 2rem;
         letter-spacing: 3px;
     }
-    
+
     .logo-combined-container {
         gap: 15px;
     }
-    
+
     /* Mobile small floating logo */
     .landing-logo-floating {
-        margin-top: 30px;
+        margin-top: 3px;
     }
-    
+
     .main-logo-img-inline {
         width: 60px;
         height: 60px;
     }
-    
+
     .logo-sub-inline {
         font-size: 1.5rem;
         letter-spacing: 1px;

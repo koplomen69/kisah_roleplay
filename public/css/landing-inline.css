@@ -1,0 +1,157 @@
+/* Landing Inline Logo styles (isolated) */
+:root {
+    --landing-padding-right: 48px;
+    --landing-translate-y: -20px;
+    --landing-translate-y-desktop: -30px;
+}
+
+.landing-row {
+    min-height: calc(100vh - 140px);
+}
+
+.landing-row > .col-lg-4.col-12 {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding-right: var(--landing-padding-right) !important;
+}
+
+
+.landing-row > .col-lg-4.col-12 .landing-logo-floating {
+    position: relative !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+@media (min-width: 992px) {
+    .main-logo-img-inline {
+        width: 600px !important;
+        height: auto !important;
+        max-width: 100% !important;
+    }
+}
+
+/* Stack the inline logo above the roleplay text on larger screens */
+@media (min-width: 992px) {
+    .logo-combined-container-inline {
+        flex-direction: column !important;
+        gap: 0 !important; /* browsers don't support negative gap; use negative margins below */
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .logo-image-wrapper-inline {
+        margin-right: 0 !important; /* remove horizontal spacing when stacked */
+        margin-bottom: -200px !important; /* pull logo closer/overlap the text (adjust as needed) */
+    }
+
+    .logo-text-wrapper-inline {
+        text-align: center !important;
+        margin-top: 0 !important;
+        transform: translateY(0) !important;
+    }
+}
+
+/* Desktop-only strong layout enforcement: force the landing row to behave
+   like a flex container and ensure the right column centers its content. */
+@media (min-width: 992px) {
+    .container-fluid > .row.landing-row {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+    }
+
+    .container-fluid > .row.landing-row > .col-lg-8.col-12 {
+        flex: 2 1 0% !important;
+    }
+
+    .container-fluid > .row.landing-row > .col-lg-4.col-12 {
+        flex: 1 1 0% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .container-fluid > .row.landing-row > .col-lg-4.col-12 > .landing-logo-floating {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: auto !important;
+        margin: 0 !important;
+        align-self: center !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-logo-img-inline { width: 80px !important; height: 80px !important; }
+}
+
+@media (max-width: 480px) {
+    .main-logo-img-inline { width: 60px !important; height: 60px !important; }
+}
+
+/* Visual effects for the inline logo */
+.main-logo-img-inline {
+    filter:
+        drop-shadow(0 0 25px #FF0080)
+        drop-shadow(0 0 50px #00FFFF)
+        drop-shadow(0 0 75px rgba(255, 0, 128, 0.3))
+        drop-shadow(0 0 100px rgba(0, 255, 255, 0.2))
+        drop-shadow(0 0 20px rgba(0, 255, 255, 0.5));
+    animation: mainLogoGlow 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes mainLogoGlow {
+    0%, 100% {
+        filter:
+            drop-shadow(0 0 50px #FF0080)
+            drop-shadow(0 0 100px #00FFFF)
+            drop-shadow(0 0 150px rgba(255, 0, 128, 0.3))
+            drop-shadow(0 0 200px rgba(0, 255, 255, 0.2));
+        transform: scale(1);
+    }
+    50% {
+        filter:
+            drop-shadow(0 0 70px #FF0080)
+            drop-shadow(0 0 140px #00FFFF)
+            drop-shadow(0 0 210px rgba(255, 0, 128, 0.4))
+            drop-shadow(0 0 280px rgba(0, 255, 255, 0.3))
+            drop-shadow(0 0 50px #FFFFFF);
+        transform: scale(1.02);
+    }
+}
+
+@media (min-width: 1200px) {
+    .landing-logo-floating {
+        transform: translateY(var(--landing-translate-y-desktop));
+    }
+    .logo-sub-inline {
+        font-size: 4rem !important;
+    }
+}
+
+/* High-specificity override: ensure the inline landing logo is centered
+   and not stretched by any other rules. This targets the exact DOM
+   structure used in the blade template and uses !important to win the cascade. */
+.landing-row > .col-lg-4.col-12 > .landing-logo-floating > .logo-combined-container-inline .main-logo-img-inline {
+    display: block !important;
+    margin: 0 auto !important;
+    width: 600px !important;
+    height: auto !important;
+    max-width: 100% !important;
+    align-self: center !important;
+}
+
+/* Also ensure the intermediate containers can't stretch the logo to full height */
+.landing-row > .col-lg-4.col-12 > .landing-logo-floating {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: auto !important;
+}
+
