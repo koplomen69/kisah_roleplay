@@ -828,17 +828,17 @@ fieldset legend {
     justify-content: center;
     align-items: center;
 }
-
 .main-logo-img {
-    width: 300px;
-    height: 300px;
-    filter:
+    width: 200px;
+    height: 200px;
+    filter: 
         drop-shadow(0 0 50px #FF0080)
         drop-shadow(0 0 100px #00FFFF)
         drop-shadow(0 0 150px rgba(255, 0, 128, 0.3))
         drop-shadow(0 0 200px rgba(0, 255, 255, 0.2));
     animation: mainLogoGlow 4s ease-in-out infinite;
     transition: all 0.3s ease;
+}
 }
 
 @keyframes mainLogoGlow {
@@ -871,6 +871,67 @@ fieldset legend {
         drop-shadow(0 0 60px #FFFFFF);
 }
 
+/* Logo Combined Container */
+.logo-combined-container {
+    gap: 30px;
+    flex-wrap: nowrap;
+}
+
+.logo-image-wrapper {
+    flex-shrink: 0;
+}
+
+.logo-text-wrapper {
+    flex-shrink: 0;
+}
+
+/* Floating Logo - Sejajar dengan konten */
+.landing-logo-floating {
+    margin-top: 80px; /* Sejajarkan dengan judul */
+}
+
+.logo-combined-container-inline {
+    gap: 15px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.logo-image-wrapper-inline {
+    flex-shrink: 0;
+}
+
+.logo-text-wrapper-inline {
+    flex-shrink: 0;
+}
+
+.main-logo-img-inline {
+    width: 100px;
+    height: 100px;
+    filter: 
+        drop-shadow(0 0 25px #FF0080)
+        drop-shadow(0 0 50px #00FFFF)
+        drop-shadow(0 0 75px rgba(255, 0, 128, 0.3))
+        drop-shadow(0 0 100px rgba(0, 255, 255, 0.2));
+    animation: mainLogoGlow 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.logo-sub-inline {
+    font-family: 'Orbitron', monospace;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #FFFFFF;
+    text-shadow: 
+        0 0 35px #FF0080,
+        0 0 70px #00FFFF,
+        0 0 18px #FFFFFF;
+    letter-spacing: 3px;
+    animation: logoSubGlow 4s ease-in-out infinite;
+    margin: 0;
+    line-height: 1;
+    white-space: nowrap;
+}
+
 .logo-text-container {
     text-align: center;
 }
@@ -881,15 +942,17 @@ fieldset legend {
 
 .logo-sub {
     font-family: 'Orbitron', monospace;
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 900;
     color: #FFFFFF;
-    text-shadow:
+    text-shadow: 
         0 0 60px #FF0080,
         0 0 120px #00FFFF,
         0 0 30px #FFFFFF;
     letter-spacing: 8px;
     animation: logoSubGlow 4s ease-in-out infinite;
+    margin: 0;
+    line-height: 1;
 }
 
 @keyframes logoSubGlow {
@@ -916,22 +979,60 @@ fieldset legend {
         margin: 15px;
         max-width: none;
     }
-
+    
     .form-section {
         padding: 0 30px 40px;
     }
-
+    
     .logo-k {
         font-size: 3.5rem;
     }
-
+    
     .logo-text {
         font-size: 1.1rem;
         letter-spacing: 3px;
     }
-
+    
     .form-title {
         font-size: 1.8rem;
+    }
+    
+    /* Responsive logo layout */
+    .logo-combined-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .main-logo-img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .logo-sub {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+    
+    /* Responsive floating logo */
+    .landing-logo-floating {
+        margin-top: 40px;
+        text-align: center;
+    }
+    
+    .logo-combined-container-inline {
+        flex-direction: column;
+        gap: 15px;
+        justify-content: center;
+    }
+    
+    .main-logo-img-inline {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .logo-sub-inline {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
     }
 }
 
@@ -940,16 +1041,46 @@ fieldset legend {
         border-radius: 20px;
         margin: 10px;
     }
-
+    
     .logo-k {
         font-size: 3rem;
     }
-
+    
     .form-title {
         font-size: 1.5rem;
     }
-
+    
     .form-section {
         padding: 0 25px 35px;
+    }
+    
+    /* Mobile small logo adjustments */
+    .main-logo-img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .logo-sub {
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+    
+    .logo-combined-container {
+        gap: 15px;
+    }
+    
+    /* Mobile small floating logo */
+    .landing-logo-floating {
+        margin-top: 30px;
+    }
+    
+    .main-logo-img-inline {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .logo-sub-inline {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
     }
 }

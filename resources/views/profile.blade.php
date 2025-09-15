@@ -3,7 +3,43 @@
 @section('title', 'Profile - Kisah Roleplay')
 
 @section('content')
-
+<!-- Animated Cyberpunk Background -->
+<div class="cyberpunk-background">
+    <!-- Floating Particles -->
+    <div class="particles-container">
+        <div class="particle particle-1"></div>
+        <div class="particle particle-2"></div>
+        <div class="particle particle-3"></div>
+        <div class="particle particle-4"></div>
+        <div class="particle particle-5"></div>
+        <div class="particle particle-6"></div>
+        <div class="particle particle-7"></div>
+        <div class="particle particle-8"></div>
+    </div>
+    
+    <!-- Grid Lines -->
+    <div class="grid-lines">
+        <div class="grid-line grid-line-vertical grid-line-1"></div>
+        <div class="grid-line grid-line-vertical grid-line-2"></div>
+        <div class="grid-line grid-line-vertical grid-line-3"></div>
+        <div class="grid-line grid-line-horizontal grid-line-4"></div>
+        <div class="grid-line grid-line-horizontal grid-line-5"></div>
+    </div>
+    
+    <!-- Data Streams -->
+    <div class="data-streams">
+        <div class="data-stream stream-1"></div>
+        <div class="data-stream stream-2"></div>
+        <div class="data-stream stream-3"></div>
+    </div>
+    
+    <!-- Pulsing Rings -->
+    <div class="pulse-rings">
+        <div class="pulse-ring ring-1"></div>
+        <div class="pulse-ring ring-2"></div>
+        <div class="pulse-ring ring-3"></div>
+    </div>
+</div>
 
     <!-- Success/Error Messages -->
     @if(session('success'))
@@ -23,10 +59,18 @@
     <div class="row g-4">
         <!-- Left Profile Section -->
         <div class="col-lg-4">
-            <div class="card h-100" style="background: rgba(26, 0, 17, 0.95); border: 2px solid #00FFFF; border-radius: 15px; backdrop-filter: blur(15px); box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);">
-                <div class="card-header text-center py-4" style="background: rgba(0, 255, 255, 0.1); border-bottom: 2px solid rgba(0, 255, 255, 0.3);">
-                    <div class="profile-avatar mb-3">
-                        <div style="width: 120px; height: 120px; background: linear-gradient(45deg, #00FFFF, #FF1493); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; position: relative; overflow: hidden; box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);">
+            <div class="card h-100 profile-card-hover" style="background: rgba(26, 0, 17, 0.95); border: 2px solid #00FFFF; border-radius: 15px; backdrop-filter: blur(15px); box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);">
+                <!-- Cyberpunk Header with Decorative Corners -->
+                <div class="card-header text-center py-4 position-relative" style="background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(255, 20, 147, 0.1)); border-bottom: 2px solid rgba(0, 255, 255, 0.3); overflow: hidden;">
+                    <!-- Cyberpunk Corner Decorations -->
+                    <div class="position-absolute" style="top: 0; left: 0; width: 30px; height: 30px; border-top: 3px solid #00FFFF; border-left: 3px solid #00FFFF;"></div>
+                    <div class="position-absolute" style="top: 0; right: 0; width: 30px; height: 30px; border-top: 3px solid #FF1493; border-right: 3px solid #FF1493;"></div>
+                    <div class="position-absolute" style="bottom: 0; left: 0; width: 30px; height: 30px; border-bottom: 3px solid #D77CA8; border-left: 3px solid #D77CA8;"></div>
+                    <div class="position-absolute" style="bottom: 0; right: 0; width: 30px; height: 30px; border-bottom: 3px solid #98194A; border-right: 3px solid #98194A;"></div>
+                    
+                    <!-- Floating Avatar -->
+                    <div class="profile-avatar mb-3" style="animation: avatarFloat 3s ease-in-out infinite;">
+                        <div style="width: 120px; height: 120px; background: linear-gradient(45deg, #00FFFF, #FF1493); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; position: relative; overflow: hidden; box-shadow: 0 0 35px rgba(0, 255, 255, 0.6), 0 0 70px rgba(255, 20, 147, 0.3);">
                             <div style="width: 110px; height: 110px; background: rgba(26, 0, 17, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden;">
                                 @if(Auth::user()->avatar_url)
                                     <img src="{{ Auth::user()->avatar_url }}" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover;">
@@ -34,62 +78,239 @@
                                     <i class="fas fa-user" style="font-size: 3rem; color: #00FFFF;"></i>
                                 @endif
                             </div>
+                            <!-- Avatar Pulse Ring -->
+                            <div class="position-absolute" style="width: 140px; height: 140px; border: 2px solid rgba(0, 255, 255, 0.3); border-radius: 50%; animation: pulseRing 2s infinite;"></div>
                         </div>
                     </div>
-                    <h4 style="color: #00FFFF; font-family: 'Orbitron', monospace; margin: 0; text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);">
-                        {{ Auth::user()->name }}
-                    </h4>
-                    <p style="color: #D77CA8; margin: 0; font-family: 'Rajdhani', sans-serif;">
-                        <i class="fas fa-crown me-1"></i>Player Profile
-                    </p>
+                    
+                    <!-- Modern Typography -->
+                    <div class="position-relative" style="z-index: 10;">
+                        <h4 style="color: #00FFFF; font-family: 'Orbitron', monospace; margin: 0; font-size: 1.4rem; font-weight: 700; text-shadow: 0 0 15px rgba(0, 255, 255, 0.7); letter-spacing: 2px; text-transform: uppercase;">
+                            {{ Auth::user()->name }}
+                        </h4>
+                        <div class="mt-2" style="width: 60px; height: 2px; background: linear-gradient(90deg, #00FFFF, #FF1493); margin: 0 auto; animation: headerUnderline 2s ease-in-out infinite alternate;"></div>
+                        @php
+                            // Generate unique verification code based on user ID and timestamp
+                            $verificationCode = 'K-' . strtoupper(substr(md5(Auth::user()->id . Auth::user()->created_at->timestamp), 0, 6));
+                        @endphp
+                        
+                        <p style="color: #D77CA8; margin: 8px 0 0 0; font-family: 'Rajdhani', sans-serif; font-size: 0.95rem; font-weight: 500; letter-spacing: 1px;">
+                            <i class="fas fa-link me-2" style="color: #FF1493;"></i>VERIFICATION ID: 
+                            <span id="verificationCode" style="color: #00FFFF; font-weight: bold; text-shadow: 0 0 10px rgba(0, 255, 255, 0.5); cursor: pointer; padding: 2px 6px; border-radius: 4px; transition: all 0.3s ease;" 
+                                  onclick="copyVerificationCode('{{ $verificationCode }}')" 
+                                  onmouseover="this.style.background='rgba(0, 255, 255, 0.1)'" 
+                                  onmouseout="this.style.background='transparent'" 
+                                  title="Click to copy">{{ $verificationCode }}</span> 
+                            <i class="fas fa-copy ms-1" style="color: #00FFFF; font-size: 0.8rem; cursor: pointer;" onclick="copyVerificationCode('{{ $verificationCode }}')"></i> • <i class="fas fa-crown me-1" style="color: #D77CA8;"></i>PLAYER
+                        </p>
+                        
+                        <!-- Verification Instructions -->
+                        <div class="mt-3 p-2" style="background: rgba(255, 193, 7, 0.15); border: 1px solid rgba(255, 193, 7, 0.4); border-radius: 8px;">
+                            <p class="mb-0" style="color: #FFFFFF; font-size: 0.85rem; font-family: 'Rajdhani', sans-serif; line-height: 1.4; font-weight: 600;">
+                                <i class="fas fa-info-circle me-1" style="color: #ffc107;"></i>
+                                <strong style="color: #ffc107;">Verification:</strong> Add this ID to your Roblox bio to link your account
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="card-body p-4">
                     <div class="profile-stats">
-                        <div class="stat-item mb-4" style="background: rgba(0, 255, 255, 0.1); padding: 15px; border-radius: 10px; border-left: 4px solid #00FFFF;">
+                        <div class="stat-item data-item-enhanced mb-4" style="background: rgba(0, 255, 255, 0.1); padding: 15px; border-radius: 10px; border-left: 4px solid #00FFFF; cursor: pointer;">
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-id-card me-3" style="color: #00FFFF; font-size: 1.5rem;"></i>
                                 <div>
-                                    <small style="color: #D77CA8; opacity: 0.8;">Member Since</small>
-                                    <div style="color: #00FFFF; font-weight: bold;">{{ Auth::user()->created_at->format('M d, Y') }}</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="stat-item mb-4" style="background: rgba(255, 20, 147, 0.1); padding: 15px; border-radius: 10px; border-left: 4px solid #00FFFF;">
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-envelope me-3" style="color: #00FFFF; font-size: 1.5rem;"></i>
-                                <div>
-                                    <small style="color: #00FFFF; opacity: 0.8;">Email</small>
-                                    <div style="color: #00FFFF; font-weight: bold; font-size: 0.9rem;">{{ Auth::user()->email }}</div>
+                                    <small style="color: #FFFFFF; opacity: 0.9; font-weight: 600;">Member Since</small>
+                                    <div style="color: #00FFFF; font-weight: bold; text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);">{{ Auth::user()->created_at->format('M d, Y') }}</div>
                                 </div>
                             </div>
                         </div>
 
                         @if(Auth::user()->roblox_username)
-                        <div class="stat-item mb-4" style="background: rgba(152, 25, 74, 0.2); padding: 15px; border-radius: 10px; border-left: 4px solid #00FFFF;">
+                        <div class="stat-item data-item-enhanced mb-4" style="background: rgba(152, 25, 74, 0.2); padding: 15px; border-radius: 10px; border-left: 4px solid #98194A; cursor: pointer;">
                             <div class="d-flex align-items-center">
-                                <i class="fab fa-roblox me-3" style="color: #98194A; font-size: 1.5rem;"></i>
+                                <i class="fab fa-roblox me-3" style="color: #FF6B9D; font-size: 1.5rem;"></i>
                                 <div>
-                                    <small style="color: #00FFFF; opacity: 0.8;">Roblox Username</small>
-                                    <div style="color: #00FFFF; font-weight: bold;">{{ Auth::user()->roblox_username }}</div>
+                                    <small style="color: #FFFFFF; opacity: 0.9; font-weight: 600;">Roblox Username</small>
+                                    <div style="color: #00FFFF; font-weight: bold; text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);">{{ Auth::user()->roblox_username }}</div>
                                 </div>
                             </div>
                         </div>
                         @endif
+
+                        @php
+                            $playerStats = Auth::user()->playerStats;
+                        @endphp
+
+                        <!-- Game Statistics -->
+                        <div style="border-top: 2px solid rgba(215, 124, 168, 0.3); padding-top: 20px; margin-top: 20px;">
+                            <h6 style="color: #FFFFFF; font-family: 'Orbitron', monospace; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);">
+                                <i class="fas fa-gamepad me-2" style="color: #D77CA8;"></i>Game Data
+                            </h6>
+                            
+                            <!-- Wallet -->
+                            <div class="stat-item mb-3" style="background: rgba(255, 20, 147, 0.1); padding: 12px; border-radius: 10px; border-left: 4px solid #FF1493; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.background='rgba(255, 20, 147, 0.2)'; this.style.transform='translateX(5px)';" onmouseout="this.style.background='rgba(255, 20, 147, 0.1)'; this.style.transform='translateX(0px)';">
+                                <div class="d-flex align-items-center">
+                                    <div class="position-relative me-3">
+                                        <i class="fas fa-wallet" style="color: #FF1493; font-size: 1.2rem;"></i>
+                                        @if($playerStats && $playerStats->wallet > 10000)
+                                            <div class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background: #FF1493; color: white; font-size: 0.6rem;">💎</div>
+                                        @endif
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <small style="color: #FFFFFF; opacity: 0.9; font-weight: 700;">Wallet</small>
+                                            <div style="color: #00FFFF; font-weight: bold; text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);">
+                                                @if($playerStats && $playerStats->wallet !== null)
+                                                    ${{ number_format($playerStats->wallet) }}
+                                                @else
+                                                    $0
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <!-- Mini progress bar -->
+                                        <div style="height: 3px; background: rgba(255, 20, 147, 0.2); border-radius: 2px; overflow: hidden;">
+                                            @php
+                                                $walletPercent = $playerStats && $playerStats->wallet ? min(($playerStats->wallet / 50000) * 100, 100) : 0;
+                                            @endphp
+                                            <div style="height: 100%; background: linear-gradient(90deg, #FF1493, #00FFFF); width: {{ $walletPercent }}%; transition: width 0.8s ease;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bank -->
+                            <div class="stat-item mb-3" style="background: rgba(152, 25, 74, 0.1); padding: 12px; border-radius: 10px; border-left: 4px solid #98194A; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.background='rgba(152, 25, 74, 0.2)'; this.style.transform='translateX(5px)';" onmouseout="this.style.background='rgba(152, 25, 74, 0.1)'; this.style.transform='translateX(0px)';">
+                                <div class="d-flex align-items-center">
+                                    <div class="position-relative me-3">
+                                        <i class="fas fa-university" style="color: #98194A; font-size: 1.2rem;"></i>
+                                        @if($playerStats && $playerStats->bank > 100000)
+                                            <div class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background: #98194A; color: white; font-size: 0.6rem;">🏦</div>
+                                        @endif
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <small style="color: #FFFFFF; opacity: 0.9; font-weight: 700;">Bank</small>
+                                            <div style="color: #00FFFF; font-weight: bold; text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);">
+                                                @if($playerStats && $playerStats->bank !== null)
+                                                    ${{ number_format($playerStats->bank) }}
+                                                @else
+                                                    $0
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <!-- Mini progress bar -->
+                                        <div style="height: 3px; background: rgba(152, 25, 74, 0.2); border-radius: 2px; overflow: hidden;">
+                                            @php
+                                                $bankPercent = $playerStats && $playerStats->bank ? min(($playerStats->bank / 200000) * 100, 100) : 0;
+                                            @endphp
+                                            <div style="height: 100%; background: linear-gradient(90deg, #98194A, #00FFFF); width: {{ $bankPercent }}%; transition: width 0.8s ease;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Kantong -->
+                            <div class="stat-item mb-3" style="background: rgba(255, 193, 7, 0.1); padding: 12px; border-radius: 10px; border-left: 4px solid #ffc107; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.background='rgba(255, 193, 7, 0.2)'; this.style.transform='translateX(5px)';" onmouseout="this.style.background='rgba(255, 193, 7, 0.1)'; this.style.transform='translateX(0px)';">
+                                <div class="d-flex align-items-center">
+                                    <div class="position-relative me-3">
+                                        <i class="fas fa-shopping-bag" style="color: #ffc107; font-size: 1.2rem;"></i>
+                                        @if($playerStats && $playerStats->kantong > 50)
+                                            <div class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background: #ffc107; color: #1a0011; font-size: 0.6rem;">🛍</div>
+                                        @endif
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <small style="color: #FFFFFF; opacity: 0.9; font-weight: 700;">Kantong</small>
+                                            <div style="color: #00FFFF; font-weight: bold; text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);">
+                                                @if($playerStats && $playerStats->kantong !== null)
+                                                    {{ number_format($playerStats->kantong) }}
+                                                @else
+                                                    0
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <!-- Mini progress bar -->
+                                        <div style="height: 3px; background: rgba(255, 193, 7, 0.2); border-radius: 2px; overflow: hidden;">
+                                            @php
+                                                $kantongPercent = $playerStats && $playerStats->kantong ? min(($playerStats->kantong / 100) * 100, 100) : 0;
+                                            @endphp
+                                            <div style="height: 100%; background: linear-gradient(90deg, #ffc107, #00FFFF); width: {{ $kantongPercent }}%; transition: width 0.8s ease;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Playtime -->
+                            <div class="stat-item mb-3" style="background: rgba(40, 167, 69, 0.1); padding: 12px; border-radius: 10px; border-left: 4px solid #28a745; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.background='rgba(40, 167, 69, 0.2)'; this.style.transform='translateX(5px)';" onmouseout="this.style.background='rgba(40, 167, 69, 0.1)'; this.style.transform='translateX(0px)';">
+                                <div class="d-flex align-items-center">
+                                    <div class="position-relative me-3">
+                                        <i class="fas fa-clock" style="color: #28a745; font-size: 1.2rem;"></i>
+                                        @php
+                                            $playtimeValue = $playerStats && $playerStats->playtime ? $playerStats->playtime : '0h 0m';
+                                            $hasLongPlaytime = str_contains($playtimeValue, 'h') && (int)explode('h', $playtimeValue)[0] > 10;
+                                        @endphp
+                                        @if($hasLongPlaytime)
+                                            <div class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background: #28a745; color: white; font-size: 0.6rem;">⏱</div>
+                                        @endif
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <small style="color: #FFFFFF; opacity: 0.9; font-weight: 700;">Playtime</small>
+                                            <div style="color: #00FFFF; font-weight: bold; text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);">
+                                                @if($playerStats && $playerStats->playtime !== null)
+                                                    {{ $playerStats->playtime }}
+                                                @else
+                                                    0h 0m
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <!-- Mini progress bar for playtime -->
+                                        <div style="height: 3px; background: rgba(40, 167, 69, 0.2); border-radius: 2px; overflow: hidden;">
+                                            @php
+                                                $hours = 0;
+                                                if ($playerStats && $playerStats->playtime && str_contains($playerStats->playtime, 'h')) {
+                                                    $hours = (int)explode('h', $playerStats->playtime)[0];
+                                                }
+                                                $playtimePercent = min(($hours / 100) * 100, 100);
+                                            @endphp
+                                            <div style="height: 100%; background: linear-gradient(90deg, #28a745, #00FFFF); width: {{ $playtimePercent }}%; transition: width 0.8s ease;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
+                    <!-- Enhanced Action Buttons -->
                     <div class="text-center mt-4">
+                        <!-- Discord Button -->
+                        <a href="https://discord.gg/kisahroleplay" target="_blank" class="btn w-100 mb-3 position-relative overflow-hidden" style="background: linear-gradient(45deg, #5865F2, #7289DA); border: none; color: white; font-family: 'Orbitron', monospace; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(88, 101, 242, 0.4)';" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(88, 101, 242, 0.3)';">
+                            <span class="position-relative" style="z-index: 2;">
+                                <i class="fab fa-discord me-2"></i>Join Discord
+                            </span>
+                            <!-- Sweep Light Effect -->
+                            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent); transform: translateX(-100%); animation: sweepLight 3s infinite;"></div>
+                        </a>
+
                         <!-- Edit Profile Button -->
-                        <button type="button" class="btn btn-outline-info w-100 mb-3" data-bs-toggle="modal" data-bs-target="#editProfileModal" style="border: 2px solid #00FFFF; color: #00FFFF; font-family: 'Orbitron', monospace; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">
-                            <i class="fas fa-edit me-2"></i>Edit Profile
+                        <button type="button" class="btn w-100 mb-3 position-relative overflow-hidden" data-bs-toggle="modal" data-bs-target="#editProfileModal" style="background: linear-gradient(45deg, #00FFFF, #00CED1); border: none; color: #1a0011; font-family: 'Orbitron', monospace; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0, 255, 255, 0.4)';" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(0, 255, 255, 0.3)';">
+                            <span class="position-relative" style="z-index: 2;">
+                                <i class="fas fa-user-edit me-2"></i>Edit Profile
+                            </span>
+                            <!-- Sweep Light Effect -->
+                            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent); transform: translateX(-100%); animation: sweepLight 3s infinite 1s;"></div>
                         </button>
 
                         <!-- Logout Button -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <button type="submit" class="btn btn-outline-danger w-100" style="border: 2px solid #FF1493; color: #FF1493; font-family: 'Orbitron', monospace; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">
-                                <i class="fas fa-sign-out-alt me-2"></i>Logout
+                            <button type="submit" class="btn w-100 position-relative overflow-hidden" style="background: linear-gradient(45deg, #FF1493, #C71585); border: none; color: white; font-family: 'Orbitron', monospace; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(255, 20, 147, 0.4)';" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 15px rgba(255, 20, 147, 0.3)';">
+                                <span class="position-relative" style="z-index: 2;">
+                                    <i class="fas fa-power-off me-2"></i>Logout
+                                </span>
+                                <!-- Sweep Light Effect -->
+                                <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent); transform: translateX(-100%); animation: sweepLight 3s infinite 2s;"></div>
                             </button>
                         </form>
                     </div>
@@ -102,10 +323,10 @@
             <div class="row g-4">
                 <!-- Leaderboard Playtime -->
                 <div class="col-md-6">
-                    <div class="card h-100" style="background: rgba(26, 0, 17, 0.95); border: 2px solid #00FFFF; border-radius: 15px; backdrop-filter: blur(15px); box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);">
-                        <div class="card-header text-center py-3" style="background: rgba(0, 255, 255, 0.1); border-bottom: 1px solid rgba(0, 255, 255, 0.3);">
-                            <h5 class="mb-0" style="color: #00FFFF; font-family: 'Orbitron', monospace; text-transform: uppercase; letter-spacing: 1px;">
-                                <i class="fas fa-clock me-2"></i>Leaderboard Playtime
+                    <div class="card h-100" style="background: linear-gradient(135deg, rgba(26, 0, 17, 0.95), rgba(0, 40, 60, 0.8)); border: 2px solid #00FFFF; border-radius: 15px; backdrop-filter: blur(15px); box-shadow: 0 0 30px rgba(0, 255, 255, 0.4), 0 0 60px rgba(0, 255, 255, 0.1);">
+                        <div class="card-header text-center py-3" style="background: linear-gradient(90deg, rgba(0, 255, 255, 0.2), rgba(0, 200, 255, 0.15)); border-bottom: 2px solid rgba(0, 255, 255, 0.5);">
+                            <h5 class="mb-0" style="color: #FFFFFF; font-family: 'Orbitron', monospace; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);">
+                                <i class="fas fa-clock me-2" style="color: #00FFFF;"></i>Leaderboard Playtime
                             </h5>
                         </div>
                         <div class="card-body p-0">
@@ -114,17 +335,17 @@
                                     <table class="table table-dark table-hover mb-0">
                                         <thead style="background: rgba(0, 255, 255, 0.2);">
                                             <tr>
-                                                <th style="color: #00FFFF;">Rank</th>
-                                                <th style="color: #00FFFF;">Player</th>
-                                                <th style="color: #00FFFF;">Playtime</th>
+                                                <th style="color: #FFFFFF; font-weight: 700; text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);">Rank</th>
+                                                <th style="color: #FFFFFF; font-weight: 700; text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);">Player</th>
+                                                <th style="color: #FFFFFF; font-weight: 700; text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);">Playtime</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach($leaderboards['playtime'] as $entry)
                                                 <tr class="{{ $entry['user_id'] == Auth::id() ? 'table-info' : '' }}">
-                                                    <td style="color: #D77CA8;">{{ $entry['rank'] }}</td>
-                                                    <td style="color: #D77CA8;">{{ $entry['player'] }}</td>
-                                                    <td style="color: #00FFFF;">{{ $entry['value'] }}</td>
+                                                    <td style="color: #FFFFFF; font-weight: 600; opacity: 0.9;">{{ $entry['rank'] }}</td>
+                                                    <td style="color: #FFFFFF; font-weight: 600; opacity: 0.9;">{{ $entry['player'] }}</td>
+                                                    <td style="color: #00FFFF; font-weight: bold; text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);">{{ $entry['value'] }}</td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -132,8 +353,8 @@
                                 </div>
                             @else
                                 <div class="text-center py-5">
-                                    <i class="fas fa-clock display-4 mb-3" style="color: #00FFFF; opacity: 0.5;"></i>
-                                    <p class="text-muted">No playtime data available</p>
+                                    <i class="fas fa-clock display-4 mb-3" style="color: #00FFFF; opacity: 0.7;"></i>
+                                    <p style="color: #FFFFFF; opacity: 0.8; font-weight: 500;">No playtime data available</p>
                                 </div>
                             @endif
                         </div>
@@ -142,10 +363,10 @@
 
                 <!-- Leaderboard Wallet -->
                 <div class="col-md-6">
-                    <div class="card h-100" style="background: rgba(26, 0, 17, 0.95); border: 2px solid #FF1493; border-radius: 15px; backdrop-filter: blur(15px); box-shadow: 0 0 20px rgba(255, 20, 147, 0.2);">
-                        <div class="card-header text-center py-3" style="background: rgba(255, 20, 147, 0.1); border-bottom: 1px solid rgba(255, 20, 147, 0.3);">
-                            <h5 class="mb-0" style="color: #FF1493; font-family: 'Orbitron', monospace; text-transform: uppercase; letter-spacing: 1px;">
-                                <i class="fas fa-wallet me-2"></i>Leaderboard Wallet
+                    <div class="card h-100" style="background: linear-gradient(135deg, rgba(26, 0, 17, 0.95), rgba(60, 0, 30, 0.8)); border: 2px solid #FF1493; border-radius: 15px; backdrop-filter: blur(15px); box-shadow: 0 0 30px rgba(255, 20, 147, 0.4), 0 0 60px rgba(255, 20, 147, 0.1);">
+                        <div class="card-header text-center py-3" style="background: linear-gradient(90deg, rgba(255, 20, 147, 0.25), rgba(255, 100, 180, 0.15)); border-bottom: 2px solid rgba(255, 20, 147, 0.5);">
+                            <h5 class="mb-0" style="color: #FFFFFF; font-family: 'Orbitron', monospace; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; text-shadow: 0 0 15px rgba(255, 20, 147, 0.8);">
+                                <i class="fas fa-wallet me-2" style="color: #FF1493;"></i>Leaderboard Wallet
                             </h5>
                         </div>
                         <div class="card-body p-0">
@@ -154,17 +375,17 @@
                                     <table class="table table-dark table-hover mb-0">
                                         <thead style="background: rgba(255, 20, 147, 0.2);">
                                             <tr>
-                                                <th style="color: #FF1493;">Rank</th>
-                                                <th style="color: #FF1493;">Player</th>
-                                                <th style="color: #FF1493;">Wallet</th>
+                                                <th style="color: #FFFFFF; font-weight: 700; text-shadow: 0 0 8px rgba(255, 20, 147, 0.8);">Rank</th>
+                                                <th style="color: #FFFFFF; font-weight: 700; text-shadow: 0 0 8px rgba(255, 20, 147, 0.8);">Player</th>
+                                                <th style="color: #FFFFFF; font-weight: 700; text-shadow: 0 0 8px rgba(255, 20, 147, 0.8);">Wallet</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach($leaderboards['wallet'] as $entry)
                                                 <tr class="{{ $entry['user_id'] == Auth::id() ? 'table-info' : '' }}">
-                                                    <td style="color: #D77CA8;">{{ $entry['rank'] }}</td>
-                                                    <td style="color: #D77CA8;">{{ $entry['player'] }}</td>
-                                                    <td style="color: #FF1493;">{{ $entry['value'] }}</td>
+                                                    <td style="color: #FFFFFF; font-weight: 600; opacity: 0.9;">{{ $entry['rank'] }}</td>
+                                                    <td style="color: #FFFFFF; font-weight: 600; opacity: 0.9;">{{ $entry['player'] }}</td>
+                                                    <td style="color: #FF1493; font-weight: bold; text-shadow: 0 0 8px rgba(255, 20, 147, 0.8);">{{ $entry['value'] }}</td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -172,8 +393,8 @@
                                 </div>
                             @else
                                 <div class="text-center py-5">
-                                    <i class="fas fa-wallet display-4 mb-3" style="color: #FF1493; opacity: 0.5;"></i>
-                                    <p class="text-muted">No wallet data available</p>
+                                    <i class="fas fa-wallet display-4 mb-3" style="color: #FF1493; opacity: 0.7;"></i>
+                                    <p style="color: #FFFFFF; opacity: 0.8; font-weight: 500;">No wallet data available</p>
                                 </div>
                             @endif
                         </div>
@@ -182,29 +403,29 @@
 
                 <!-- Leaderboard Bank -->
                 <div class="col-md-6">
-                    <div class="card h-100" style="background: rgba(26, 0, 17, 0.95); border: 2px solid #98194A; border-radius: 15px; backdrop-filter: blur(15px); box-shadow: 0 0 20px rgba(152, 25, 74, 0.2);">
-                        <div class="card-header text-center py-3" style="background: rgba(152, 25, 74, 0.1); border-bottom: 1px solid rgba(152, 25, 74, 0.3);">
-                            <h5 class="mb-0" style="color: #98194A; font-family: 'Orbitron', monospace; text-transform: uppercase; letter-spacing: 1px;">
-                                <i class="fas fa-university me-2"></i>Leaderboard Bank
+                    <div class="card h-100" style="background: linear-gradient(135deg, rgba(26, 0, 17, 0.95), rgba(40, 0, 40, 0.8)); border: 2px solid #9B59B6; border-radius: 15px; backdrop-filter: blur(15px); box-shadow: 0 0 30px rgba(155, 89, 182, 0.4), 0 0 60px rgba(155, 89, 182, 0.1);">
+                        <div class="card-header text-center py-3" style="background: linear-gradient(90deg, rgba(155, 89, 182, 0.25), rgba(180, 120, 200, 0.15)); border-bottom: 2px solid rgba(155, 89, 182, 0.5);">
+                            <h5 class="mb-0" style="color: #FFFFFF; font-family: 'Orbitron', monospace; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; text-shadow: 0 0 15px rgba(155, 89, 182, 0.8);">
+                                <i class="fas fa-university me-2" style="color: #9B59B6;"></i>Leaderboard Bank
                             </h5>
                         </div>
                         <div class="card-body p-0">
                             @if(isset($leaderboards['bank']) && $leaderboards['bank']->count() > 0)
                                 <div class="table-responsive">
                                     <table class="table table-dark table-hover mb-0">
-                                        <thead style="background: rgba(152, 25, 74, 0.2);">
+                                        <thead style="background: rgba(155, 89, 182, 0.2);">
                                             <tr>
-                                                <th style="color: #98194A;">Rank</th>
-                                                <th style="color: #98194A;">Player</th>
-                                                <th style="color: #98194A;">Bank</th>
+                                                <th style="color: #FFFFFF; font-weight: 700; text-shadow: 0 0 8px rgba(155, 89, 182, 0.8);">Rank</th>
+                                                <th style="color: #FFFFFF; font-weight: 700; text-shadow: 0 0 8px rgba(155, 89, 182, 0.8);">Player</th>
+                                                <th style="color: #FFFFFF; font-weight: 700; text-shadow: 0 0 8px rgba(155, 89, 182, 0.8);">Bank</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach($leaderboards['bank'] as $entry)
                                                 <tr class="{{ $entry['user_id'] == Auth::id() ? 'table-info' : '' }}">
-                                                    <td style="color: #D77CA8;">{{ $entry['rank'] }}</td>
-                                                    <td style="color: #D77CA8;">{{ $entry['player'] }}</td>
-                                                    <td style="color: #98194A;">{{ $entry['value'] }}</td>
+                                                    <td style="color: #FFFFFF; font-weight: 600; opacity: 0.9;">{{ $entry['rank'] }}</td>
+                                                    <td style="color: #FFFFFF; font-weight: 600; opacity: 0.9;">{{ $entry['player'] }}</td>
+                                                    <td style="color: #9B59B6; font-weight: bold; text-shadow: 0 0 8px rgba(155, 89, 182, 0.8);">{{ $entry['value'] }}</td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -212,8 +433,8 @@
                                 </div>
                             @else
                                 <div class="text-center py-5">
-                                    <i class="fas fa-university display-4 mb-3" style="color: #98194A; opacity: 0.5;"></i>
-                                    <p class="text-muted">No bank data available</p>
+                                    <i class="fas fa-university display-4 mb-3" style="color: #9B59B6; opacity: 0.7;"></i>
+                                    <p style="color: #FFFFFF; opacity: 0.8; font-weight: 500;">No bank data available</p>
                                 </div>
                             @endif
                         </div>
@@ -222,29 +443,29 @@
 
                 <!-- Leaderboard Kantong -->
                 <div class="col-md-6">
-                    <div class="card h-100" style="background: rgba(26, 0, 17, 0.95); border: 2px solid #D77CA8; border-radius: 15px; backdrop-filter: blur(15px); box-shadow: 0 0 20px rgba(215, 124, 168, 0.2);">
-                        <div class="card-header text-center py-3" style="background: rgba(215, 124, 168, 0.1); border-bottom: 1px solid rgba(215, 124, 168, 0.3);">
-                            <h5 class="mb-0" style="color: #D77CA8; font-family: 'Orbitron', monospace; text-transform: uppercase; letter-spacing: 1px;">
-                                <i class="fas fa-shopping-bag me-2"></i>Leaderboard Kantong
+                    <div class="card h-100" style="background: linear-gradient(135deg, rgba(26, 0, 17, 0.95), rgba(50, 30, 0, 0.8)); border: 2px solid #F39C12; border-radius: 15px; backdrop-filter: blur(15px); box-shadow: 0 0 30px rgba(243, 156, 18, 0.4), 0 0 60px rgba(243, 156, 18, 0.1);">
+                        <div class="card-header text-center py-3" style="background: linear-gradient(90deg, rgba(243, 156, 18, 0.25), rgba(255, 180, 50, 0.15)); border-bottom: 2px solid rgba(243, 156, 18, 0.5);">
+                            <h5 class="mb-0" style="color: #FFFFFF; font-family: 'Orbitron', monospace; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; text-shadow: 0 0 15px rgba(243, 156, 18, 0.8);">
+                                <i class="fas fa-shopping-bag me-2" style="color: #F39C12;"></i>Leaderboard Kantong
                             </h5>
                         </div>
                         <div class="card-body p-0">
                             @if(isset($leaderboards['kantong']) && $leaderboards['kantong']->count() > 0)
                                 <div class="table-responsive">
                                     <table class="table table-dark table-hover mb-0">
-                                        <thead style="background: rgba(215, 124, 168, 0.2);">
+                                        <thead style="background: rgba(243, 156, 18, 0.2);">
                                             <tr>
-                                                <th style="color: #D77CA8;">Rank</th>
-                                                <th style="color: #D77CA8;">Player</th>
-                                                <th style="color: #D77CA8;">Kantong</th>
+                                                <th style="color: #FFFFFF; font-weight: 700; text-shadow: 0 0 8px rgba(243, 156, 18, 0.8);">Rank</th>
+                                                <th style="color: #FFFFFF; font-weight: 700; text-shadow: 0 0 8px rgba(243, 156, 18, 0.8);">Player</th>
+                                                <th style="color: #FFFFFF; font-weight: 700; text-shadow: 0 0 8px rgba(243, 156, 18, 0.8);">Kantong</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach($leaderboards['kantong'] as $entry)
                                                 <tr class="{{ $entry['user_id'] == Auth::id() ? 'table-info' : '' }}">
-                                                    <td style="color: #D77CA8;">{{ $entry['rank'] }}</td>
-                                                    <td style="color: #D77CA8;">{{ $entry['player'] }}</td>
-                                                    <td style="color: #D77CA8;">{{ $entry['value'] }}</td>
+                                                    <td style="color: #FFFFFF; font-weight: 600; opacity: 0.9;">{{ $entry['rank'] }}</td>
+                                                    <td style="color: #FFFFFF; font-weight: 600; opacity: 0.9;">{{ $entry['player'] }}</td>
+                                                    <td style="color: #F39C12; font-weight: bold; text-shadow: 0 0 8px rgba(243, 156, 18, 0.8);">{{ $entry['value'] }}</td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -252,8 +473,8 @@
                                 </div>
                             @else
                                 <div class="text-center py-5">
-                                    <i class="fas fa-shopping-bag display-4 mb-3" style="color: #D77CA8; opacity: 0.5;"></i>
-                                    <p class="text-muted" >No kantong data available</p>
+                                    <i class="fas fa-shopping-bag display-4 mb-3" style="color: #F39C12; opacity: 0.7;"></i>
+                                    <p style="color: #FFFFFF; opacity: 0.8; font-weight: 500;">No kantong data available</p>
                                 </div>
                             @endif
                         </div>
@@ -433,7 +654,128 @@
 </div>
 
 
+<style>
+/* Cyberpunk Animations */
+@keyframes avatarFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseRing {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+}
+
+@keyframes headerUnderline {
+    0% {
+        width: 60px;
+        opacity: 1;
+    }
+    100% {
+        width: 80px;
+        opacity: 0.7;
+    }
+}
+
+@keyframes sweepLight {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Enhanced Card Hover Effect */
+.profile-card-hover {
+    transition: all 0.4s ease;
+}
+
+.profile-card-hover:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.4), 0 0 100px rgba(255, 20, 147, 0.2) !important;
+}
+
+/* Data Item Enhanced Hover */
+.data-item-enhanced {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.data-item-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.data-item-enhanced:hover::before {
+    left: 100%;
+}
+</style>
+
 <script>
+// Copy Verification Code Function
+function copyVerificationCode(code) {
+    navigator.clipboard.writeText(code).then(function() {
+        // Show success feedback
+        const codeElement = document.getElementById('verificationCode');
+        const originalText = codeElement.textContent;
+        codeElement.textContent = 'COPIED!';
+        codeElement.style.color = '#28a745';
+        codeElement.style.textShadow = '0 0 10px rgba(40, 167, 69, 0.5)';
+        
+        setTimeout(function() {
+            codeElement.textContent = originalText;
+            codeElement.style.color = '#00FFFF';
+            codeElement.style.textShadow = '0 0 10px rgba(0, 255, 255, 0.5)';
+        }, 1500);
+        
+        // Optional: Show toast notification
+        if (typeof Swal !== 'undefined') {
+            Swal.fire({
+                icon: 'success',
+                title: 'Copied!',
+                text: 'Verification code copied to clipboard',
+                timer: 2000,
+                showConfirmButton: false,
+                background: 'rgba(26, 0, 17, 0.95)',
+                color: '#00FFFF'
+            });
+        }
+    }).catch(function(err) {
+        console.error('Failed to copy: ', err);
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = code;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        // Show feedback
+        alert('Verification code copied: ' + code);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Real-time preview updates
     const nameInput = document.getElementById('name');
