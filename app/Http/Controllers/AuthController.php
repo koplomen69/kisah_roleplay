@@ -93,10 +93,8 @@ class AuthController extends Controller
             'roblox_data_updated' => now(),
         ]);
 
-        Auth::login($user);
-
-        // Add success message and redirect to profile
-        return redirect()->route('profile')->with('success', 'Account created successfully! Welcome to Kisah Roleplay.');
+        // Instead of auto-login, redirect to login page with success message
+        return redirect()->route('login')->with('success', 'Account created successfully! Please log in to continue.');
     }
 
     public function logout(Request $request)

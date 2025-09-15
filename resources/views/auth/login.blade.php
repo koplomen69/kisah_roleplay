@@ -12,7 +12,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
     <!-- Kota Roleplay Cyberpunk Styles -->
-    <link href="{{ asset('css/kota-roleplay.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/auth.css') }}" rel="stylesheet">
 
 
 </head>
@@ -44,8 +44,11 @@
                 <p class="form-subtitle">Enter your credentials to access your account.</p>
 
                 @if(session('success'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert" style="background: rgba(0, 255, 0, 0.1); border: 2px solid #00FF00; color: #00FF00; border-radius: 10px; margin-bottom: 20px;">
-                        <i class="fas fa-check-circle me-2"></i>{{ session('success') }}
+                    <div class="alert alert-success alert-dismissible fade show cyberpunk-alert" role="alert">
+                        <div class="alert-content">
+                            <i class="fas fa-check-circle me-2"></i>
+                            <span class="alert-text">{{ session('success') }}</span>
+                        </div>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
@@ -116,13 +119,34 @@
     <!-- Auto-hide success alerts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Auto-hide success alerts after 5 seconds
-            const successAlerts = document.querySelectorAll('.alert-success');
-            successAlerts.forEach(function(alert) {
-                setTimeout(function() {
-                    const bsAlert = new bootstrap.Alert(alert);
-                    bsAlert.close();
-                }, 5000); // 5 seconds
+            // Move alerts to body level
+            const alerts = document.querySelectorAll('.cyberpunk-alert');
+            alerts.forEach(function(alert) {
+                // Remove from current position and append to body
+                document.body.appendChild(alert);
+
+                // Set initial state
+                alert.style.transform = 'translateX(-50%) translateY(-150%)';
+                alert.style.opacity = '0';
+
+                // Trigger entrance animation
+                requestAnimationFrame(() => {
+                    alert.style.transition = 'transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease-out';
+                    alert.style.transform = 'translateX(-50%) translateY(0)';
+                    alert.style.opacity = '1';
+                });
+
+                // Set up exit animation after delay
+                setTimeout(() => {
+                    alert.style.transition = 'transform 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045), opacity 0.3s ease-in';
+                    alert.style.transform = 'translateX(-50%) translateY(-150%)';
+                    alert.style.opacity = '0';
+
+                    // Remove element after animation
+                    setTimeout(() => {
+                        alert.remove();
+                    }, 500);
+                }, 5000);
             });
         });
     </script>
